@@ -2,6 +2,7 @@ import * as pako from "pako";
 import * as Survey from "survey-angular";
 // const pako = require('pako');
 
+// tslint:disable-next-line:no-shadowed-variable
 function init(Survey: any, $: any) {
     $ = $ || (window as any).$;
 
@@ -75,14 +76,24 @@ function init(Survey: any, $: any) {
             }
 
             function append3bytes(b1: any, b2: any, b3: any) {
+                // tslint:disable-next-line: no-bitwise
                 const c1 = b1 >> 2;
+                // tslint:disable-next-line: no-bitwise
+                // tslint:disable-next-line: no-bitwise
                 const c2 = ((b1 & 0x3) << 4) | (b2 >> 4);
+                // tslint:disable-next-line: no-bitwise
                 const c3 = ((b2 & 0xf) << 2) | (b3 >> 6);
+                // tslint:disable-next-line: no-bitwise
                 const c4 = b3 & 0x3f;
+                // tslint:disable-next-line: no-bitwise
                 let r = "";
+                // tslint:disable-next-line: no-bitwise
                 r += encode6bit(c1 & 0x3f);
+                // tslint:disable-next-line: no-bitwise
                 r += encode6bit(c2 & 0x3f);
+                // tslint:disable-next-line: no-bitwise
                 r += encode6bit(c3 & 0x3f);
+                // tslint:disable-next-line: no-bitwise
                 r += encode6bit(c4 & 0x3f);
                 return r;
             }

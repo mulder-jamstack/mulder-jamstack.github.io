@@ -27,6 +27,10 @@ export const ROUTES: Routes = [
         path: "surveydemo",
         component: mulderContainers.SurveyDemoComponent,
     },
+    {
+        path: "dslconfagenda",
+        component: mulderContainers.ProgramDemoComponent,
+    },
 
     // Demo complex component that consumes microservices (hal)
     {

@@ -1,6 +1,6 @@
 import { SuerveyJSPrinter } from "./prettyprinter";
 
-const p = new SuerveyJSPrinter(
+/*const p = new SuerveyJSPrinter(
     "Examen SIR 2020",
     `Vous allez démarrer cet examen. <br/>
 Vous avez 60 minutes pour cette épreuve.<br/>
@@ -30,3 +30,4 @@ console.log(
         )
     )
 );
+*/

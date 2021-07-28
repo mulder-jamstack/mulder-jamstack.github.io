@@ -10,6 +10,7 @@ import { DescbibPipe } from "./publications/descbib.pipe";
 import { PublicationsComponent } from "./publications/publications.component";
 import { StaticComponent } from "./static/static.component";
 import { SurveyDemoComponent } from "./surveydemo/surveydemo.component";
+import { ProgramDemoComponent } from "./programdemo/programdemo.component";
 
 export const containers = [
     HomeComponent,
@@ -20,6 +21,7 @@ export const containers = [
     BlogComponent,
     BlogsComponent,
     SurveyDemoComponent,
+    ProgramDemoComponent,
     AuthorPipe,
     DescbibPipe,
     SortByPipe,
@@ -33,3 +35,4 @@ export * from "./blog/blog.component";
 export * from "./blogs/blogs.component";
 export * from "./static/static.component";
 export * from "./surveydemo/surveydemo.component";
+export * from "./programdemo/programdemo.component";

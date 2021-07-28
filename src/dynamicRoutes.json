@@ -97,7 +97,7 @@
         "menupath": "DSL/DSL1 demo"
     },
     {
-        "path": "/s/dslconfagenda",
+        "path": "/dslconfagenda",
         "menupath": "DSL/DSL2: a DSL for a conference agenda"
     },
     {

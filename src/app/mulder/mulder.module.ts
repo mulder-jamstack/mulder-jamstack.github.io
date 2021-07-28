@@ -25,6 +25,7 @@ import { AngularD3CloudModule } from "angular-d3-cloud";
 import { IconsModule } from "../icons/icons.module";
 import { ScullyLibModule } from "@scullyio/ng-lib";
 import { SurveypluginModule } from "../surveyplugin/surveyplugin.module";
+import { ProgramAgendapluginModule } from "@app/programdsl/programagendaplugin.module";
 
 @NgModule({
     imports: [
@@ -39,6 +40,7 @@ import { SurveypluginModule } from "../surveyplugin/surveyplugin.module";
         ScullyLibModule,
         NavigationModule,
         SurveypluginModule,
+        ProgramAgendapluginModule,
     ],
     // providers: [...blogServices.services, ...blogGuards.guards],
     declarations: [

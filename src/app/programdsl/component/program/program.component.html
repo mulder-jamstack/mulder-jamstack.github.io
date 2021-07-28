@@ -1,0 +1,223 @@
+<div ng-controller="ProgramController">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <h2 class="title">All times are intended as PM and expressed in CEST: UTC+2</h2>
+        </div>
+
+        <div class="">
+            <label class="checkbox-inline"><input type="checkbox"
+                [value]="showFavorites"
+                (change)="toggleFavorites($event)"> Show only <span class="fas fa-star"></span></label>
+            <button class="btn btn-outline-dark" (click)="exportToCal(true)">Export <span class="fas fa-star"></span> to iCal</button>
+            <button class="btn btn-outline-dark" (click)="exportToCal(false)">Export all to iCal</button>
+        </div>
+
+
+        <ng-template #infoModal let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    <!-- Star -->
+                    <button class="star btn btn-link btn-sm" (click)="toggleFavoriteTalk(selectedTalk, selectedTalkDate)">
+                        <span *ngIf="selectedTalk.selected" ><fa-icon [icon]='["fas", "star"]'></fa-icon></span>
+                        <span *ngIf="!selectedTalk.selected"><fa-icon [icon]='["far", "star"]'></fa-icon></span>
+                    </button>
+
+                    <!-- Title -->
+                    <strong *ngIf="!hideType(selectedTalk?.type)">{{selectedTalk.type}}:</strong>
+                    <a *ngIf="selectedTalk.url" [href]="selectedTalk.url">{{selectedTalk.title}}</a>
+                    <span *ngIf="!selectedTalk.url">{{selectedTalk.title}}</span>
+                </h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div *ngIf="selectedTalk?.organizers?.length > 0">
+                    <strong>Organizers:</strong>
+                    <span *ngFor="let organizer of selectedTalk?.organizers; let i=index">{{i > 0 ? ", " : ""}}<a *ngIf="organizer.email" [href]="getMailTo(organizer.email)">{{organizer.name}}</a><span *ngIf="!organizer.email">{{organizer.name}}</span></span>
+                </div>
+
+                <div *ngIf="selectedTalk?.sessionchairs?.length > 0">
+                    <strong>Session chair:</strong>
+                    <span *ngFor="let sessionchair of selectedTalk?.sessionchairs; let i=index">{{i > 0 ? ", " : ""}}<a   *ngIf="sessionchair.email" [href]="getMailTo(sessionchair.email)">{{sessionchair.name}}</a><span *ngIf="!sessionchair.email">{{sessionchair.name}}</span></span>
+                </div>
+
+                <!-- Authors -->
+                <div *ngIf="selectedTalk?.authors">
+                    <strong>Authors:</strong>
+                    <span *ngFor="let author of selectedTalk?.authors; let i=index" >{{i > 0 ? ", " : ""}}<a *ngIf="author.email" [href]="getMailTo(author.email)">{{author.name}}</a><span *ngIf="!author.email">{{author.name}}</span></span>
+                </div>
+                <div *ngIf="selectedTalk?.papers">
+                    <span *ngFor="let paper of selectedTalk?.papers; let i=index" >{{i > 0 ? "" : ""}} <span *ngIf="paper.authors">
+                        <span *ngFor="let author of paper.authors; let j=index" >{{j > 0 ? ", " : ""}}<a *ngIf="author.email" [href]="getMailTo(author.email)">{{author.name}}</a><span *ngIf="!author.email">{{author.name}}</span></span></span>
+                        <span>: </span> <span *ngIf="paper.title"><strong>{{paper.title}}</strong></span> <span>  </span> <span *ngIf="paper.type"><I>{{paper.type}}</I></span><BR></span>
+
+                </div>
+
+
+                <!-- Speaker -->
+                <div *ngIf="selectedTalk.speaker">
+                    <strong>Speaker:</strong> {{selectedTalk?.speaker.name}}
+                </div>
+
+                <!-- Homepage -->
+                <div *ngIf="selectedTalk.speaker?.homepage">
+                    <strong>Homepage:</strong> <a [href]="selectedTalk.speaker?.homepage" target="_blank">{{selectedTalk.speaker?.homepage}}</a>
+                </div>
+
+                <!-- Website -->
+                <div *ngIf="selectedTalk.url">
+                    <strong>Website:</strong> <a [href]="selectedTalk.url" target="_blank">{{selectedTalk.url}}</a>
+                </div>
+
+                <!-- Abstract -->
+                <div *ngIf="selectedTalk.abstract" class="abstract">
+                    <strong>Abstract:</strong> {{selectedTalk.abstract}}
+                </div>
+                <div *ngIf="selectedTalk.video" class="abstract">
+                    <BR><strong>Youtube playlist:</strong> <a [href]="selectedTalk.video" target="_blank">{{selectedTalk.video}}</a>
+                </div>
+                <div *ngIf="selectedTalk.description" class="abstract">
+                    <div ng-bind-html="convertHtml(selectedTalk.description) | unsafe"></div>
+                </div>
+            </div>
+<!--            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+            </div>-->
+          </ng-template>
+
+          <!-- Modal for more info on talk -->
+       <!-- <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h4 class="modal-title" id="myModalLabel">
+                            <button class="btn btn-link btn-sm" ng-click="toggleFavoriteTalk(selectedTalk, selectedTalkDate)">
+                                <span *ngIf="selectedTalk.selected" class="fas fa-star"></span>
+                                <span *ngIf="!selectedTalk.selected" class="far fa-star"></span>
+                            </button>
+
+                            <strong *ngIf="!hideType(selectedTalk?.type)">{{selectedTalk.type}}:</strong>
+                            <a *ngIf="selectedTalk.url" [href]="selectedTalk.url">{{selectedTalk.title}}</a>
+                            <span *ngIf="!selectedTalk.url">{{selectedTalk.title}}</span>
+                        </h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+
+                </div>
+            </div>
+        </div>
+-->
+        <div *ngFor = "let day of data" class="row"  >
+            <h3 class="day">{{day.name}}</h3>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-condensed">
+                    <thead>
+                    <tr >
+                        <th  class="col-md-1 col-xs-1 col-sm-1" class="sessionColumn"></th>
+                        <th *ngFor="let room of  day.rooms" >{{room.name}}</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr  *ngFor="let sessionGroup of  day.sessionGroups; let sessionGroupIndex=index" >
+                        <!-- *ngIf="sessionGroup.length > 0"-->
+                        <td *ngFor="let session of sessionGroup; let i=index"  rowspan="session.rowSpan">
+                            <div class="session" *ngIf="i === 0 " [style]="{
+                                height: 20*session.rowSpan+'px'
+                            }">
+                                {{getStartOfSessionGroup(sessionGroup)}}
+                                <div class="sessionEnd">
+                                    {{sessionGroupIndex + session.rowSpan === day.sessionGroups.length ? getEndOfSessionGroup(sessionGroup) : ""}}
+                                </div>
+                            </div>
+
+                            <table class="table table-condensed" *ngIf="sessionGroupIndex > 0 && session.events">
+                                <tr>
+                                    <td *ngFor="let event of session.events"  class="table-inner" [class]="showColor(event)?event.type:''">
+
+                                        <!-- Event -->
+                                        <div [hidden]="!(!showFavorites || (showFavorites && event.selected))">
+
+                                            <a class="pointer-link" (click)="getInfo($event,event, session.icalStart, infoModal)" *ngIf="event.type !== 'Keynote' && showModalAndStar(event.type)">{{event.title}}</a>
+                                            <a class="pointer-link" (click)="getInfo($event,event, session.icalStart, infoModal)" *ngIf="event.type === 'Keynote'">Keynote: {{event?.speaker?.name}}</a>
+                                            <span *ngIf="!showModalAndStar(event.type)">{{event.title}}</span>
+                                            <button class="start btn btn-link btn-xs" (click)="toggleFavoriteTalk(event, session.icalStart)" *ngIf="showModalAndStar(event.type)">
+                                                <span *ngIf="event.selected" ><fa-icon [icon]='["fas", "star"]'></fa-icon></span>
+                                                <span *ngIf="!event.selected"><fa-icon [icon]='["far", "star"]'></fa-icon></span>
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                    <ng-container *ngIf="hasPapers(session.events)">
+                                    <td  *ngFor="let event of session.events"  class="table-inner" [class]="showColor(event)?event.type:''">
+
+
+
+                                        <!-- Talk -->
+                                        <div *ngIf="event.title && event.papers">
+                                            <div *ngFor="let talk of event.papers; let i=index"  [hidden]="!(!showFavorites || (showFavorites && talk.selected))">
+                                                <hr *ngIf="i > 0"/>
+
+                                                <a class="pointer-link"  (click)="getInfo($event,talk, talk.icalStart, infoModal)">{{talk.title}}</a>
+
+                                                <!--<button class="start btn btn-link btn-xs" ng-click="toggleFavoriteTalk(talk, talk.icalStart)">
+                                                    <span *ngIf="talk.selected" class="fas fa-star"></span>
+                                                    <span *ngIf="!talk.selected" class="far fa-star"></span>
+                                                </button>-->
+
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </ng-container>
+
+
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 col-md-2">
+                <div class="row"><strong>Legend:</strong></div>
+                <div class="row legend Opening">Opening</div>
+                <div class="row legend Keynote">Keynote</div>
+                <div class="row legend TalkSession">Talk Session</div>
+
+                <div class="row legend Workshop">Workshop</div>
+                <div class="row legend Tutorial">Tutorial</div>
+<!--                <div class="row legend Poster">Poster</div>
+                <div class="row legend DoctoralSymposium">Symposium</div>
+                <div class="row legend DoctoralSymposium">Doctoral Symposium</div>-->
+                <!--<div class="row legend EducatorSymposium">Educator Symposium</div>
+                <div class="row legend SRC">Student Research Competition</div>
+
+
+
+                <div class="row legend Panel">Panel</div>
+                <div class="row legend Clinic">Clinic</div>
+                <div class="row legend Meeting">Meeting</div>
+
+
+                <div class="row legend Lunch">Lunch</div>-->
+                <div class="row legend Meeting">Steering Comitee</div>
+                <div class="row legend Reception">Virtual Reception</div>
+                <div class="row legend CoffeeBreak">Coffee Break</div>
+            </div>
+        </div>
+    </div>
+
+</div>

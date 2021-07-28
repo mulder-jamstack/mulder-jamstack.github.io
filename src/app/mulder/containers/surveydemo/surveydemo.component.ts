@@ -129,6 +129,7 @@ export class SurveyDemoComponent implements OnInit, OnDestroy {
 
                     const s1 = p.print(res as string);
 
+                    // tslint:disable-next-line:no-eval
                     const s = JSON.parse(eval(s1));
 
                     // Random pages

@@ -14,15 +14,16 @@ import {
     faChevronUp,
     faCircle,
     faColumns,
+    faHome,
     faInfinity,
     faProjectDiagram,
+    faRadiationAlt,
     faSearch,
     faSlidersH,
+    faStar,
     faTable,
     faTachometerAlt,
     faUser,
-    faHome,
-    faRadiationAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 export const fontAwesomeSolidIcons = {
@@ -48,4 +49,5 @@ export const fontAwesomeSolidIcons = {
     faSlidersH,
     faHome,
     faRadiationAlt,
+    faStar,
 };
