@@ -9,8 +9,8 @@ import {
 } from "@angular/core";
 import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-const data = require("./data.json");
 
+import data from "./data.json";
 import { Day, Event, Paper, SessionGroup, Type } from "./programtype";
 
 @Component({
