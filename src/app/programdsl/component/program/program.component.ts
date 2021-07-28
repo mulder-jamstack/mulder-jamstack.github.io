@@ -9,8 +9,10 @@ import {
 } from "@angular/core";
 import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { HttpClient, HttpHeaders, HttpXhrBackend } from "@angular/common/http";
 
 import data from "./data.json";
+import { evaluate } from "./visitor";
 import { Day, Event, Paper, SessionGroup, Type } from "./programtype";
 
 @Component({
@@ -44,7 +46,24 @@ export class ProgramComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {}
     ngOnInit() {
-        this.preprocessData(data);
+        let httpOptions = {
+            headers: new HttpHeaders({
+                Accept: "text/html, application/xhtml+xml, */*",
+            }),
+            responseType: "text" as "json",
+        };
+
+        const httpClient = new HttpClient(new HttpXhrBackend({ build: () => new XMLHttpRequest() }));
+        httpClient
+            .get(
+                "https://raw.githubusercontent.com/gwendal-jouneaux/conference/main/models.md", // Mettre le md dans le repo
+                httpOptions
+            )
+            .subscribe((r : any) => {
+                let res = r as string;
+                let json = evaluate(res);
+                this.preprocessData(json);
+            });
     }
 
     getMailTo(email: string): string {
@@ -52,7 +71,7 @@ export class ProgramComponent implements OnInit, OnChanges {
     }
     preprocessData(da: any) {
         ////// Preprocess data //////
-
+        console.log(da)
         this.data = da;
 
         ////// Favorites /////
