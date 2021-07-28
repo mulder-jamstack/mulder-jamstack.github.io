@@ -56,7 +56,7 @@ export class ProgramComponent implements OnInit, OnChanges {
         const httpClient = new HttpClient(new HttpXhrBackend({ build: () => new XMLHttpRequest() }));
         httpClient
             .get(
-                "https://raw.githubusercontent.com/gwendal-jouneaux/conference/main/models.md", // Mettre le md dans le repo
+                "https://raw.githubusercontent.com/gwendal-jouneaux/mulder-jamstack.github.io/src/content/agenda/models.md", // Mettre le md dans le repo
                 httpOptions
             )
             .subscribe((r : any) => {
