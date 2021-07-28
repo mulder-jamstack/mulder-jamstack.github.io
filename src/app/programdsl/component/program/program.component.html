@@ -138,7 +138,7 @@
                                 </div>
                             </div>
 
-                            <table class="table table-condensed" *ngIf="sessionGroupIndex > 0 && session.events">
+                            <table class="table table-condensed" *ngIf="sessionGroupIndex >= 0 && session.events">
                                 <tr>
                                     <td *ngFor="let event of session.events"  class="table-inner" [class]="showColor(event)?event.type:''">
 
