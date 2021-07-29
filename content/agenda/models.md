@@ -972,7 +972,7 @@ MODELS Community Awards
 - 11:00 - 12:30 in Vauban 2 : ARCADIA in a Nutshell
 - 11:00 - 12:30 in Vauban 1 : Hybrid Graphical and Textual Modelling and Code Generation with PapyrusRT
 
-- 11:00 - 12:30 in Lamennais 1 : OCL
+- 11:00 - 12:30 in Lamennais 1 : OCL1
 - 11:00 - 12:30 in Lamennais 2 : VOLT
 - 11:00 - 12:30 in Lamennais 3 : ME
 
@@ -984,7 +984,7 @@ MODELS Community Awards
 - 14:00 - 15:30 in Vauban 2 : Creating a Domain-Specific Graphical Modeling Workbench with Eclipse Technologies
 - 14:00 - 15:30 in Vauban 1 : Technologies and Design Patterns for Model-based Development of Cyber-physical Systems
 
-- 14:00 - 15:30 in Lamennais 1 : OCL
+- 14:00 - 15:30 in Lamennais 1 : OCL1
 - 14:00 - 15:30 in Lamennais 2 : FlexMDE
 - 14:00 - 15:30 in Lamennais 3 : ME
 
@@ -996,7 +996,7 @@ MODELS Community Awards
 - 16:00 - 17:30 in Vauban 2 : Creating a Domain-Specific Graphical Modeling Workbench with Eclipse Technologies
 - 16:00 - 17:30 in Vauban 1 : Technologies and Design Patterns for Model-based Development of Cyber-physical Systems
 
-- 16:00 - 17:30 in Lamennais 1 : OCL
+- 16:00 - 17:30 in Lamennais 1 : OCL2
 - 16:00 - 17:30 in Lamennais 2 : FlexMDE
 - 16:00 - 17:30 in Lamennais 3 : ME
 
