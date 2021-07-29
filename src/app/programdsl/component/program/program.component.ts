@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders, HttpXhrBackend } from "@angular/common/http";
 import {
     ChangeDetectionStrategy,
     Component,
@@ -9,15 +10,13 @@ import {
 } from "@angular/core";
 import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { HttpClient, HttpHeaders, HttpXhrBackend } from "@angular/common/http";
 
-import data from "./data.json";
-import { evaluate } from "./visitor";
+// import data from "./data.json";
 import { Day, Event, Paper, SessionGroup, Type } from "./programtype";
+import { evaluate } from "./visitor";
 
 @Component({
     selector: "mulder-confprogram",
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: "./program.component.html",
     styleUrls: ["program.component.scss"],
 })
@@ -41,27 +40,27 @@ export class ProgramComponent implements OnInit, OnChanges {
     favoriteTalks: any = {};
     selectedTalk: Paper | Event = {};
     selectedTalkDate: any;
-    // var x = toITCFormat('2014/09/04', '02:30PM');
-    // console.log(x); // this will output ur .ics format
 
     ngOnChanges(changes: SimpleChanges): void {}
     ngOnInit() {
-        let httpOptions = {
+        const httpOptions = {
             headers: new HttpHeaders({
                 Accept: "text/html, application/xhtml+xml, */*",
             }),
             responseType: "text" as "json",
         };
 
-        const httpClient = new HttpClient(new HttpXhrBackend({ build: () => new XMLHttpRequest() }));
+        const httpClient = new HttpClient(
+            new HttpXhrBackend({ build: () => new XMLHttpRequest() })
+        );
         httpClient
             .get(
                 "https://raw.githubusercontent.com/gwendal-jouneaux/mulder-jamstack.github.io/src/content/agenda/models.md", // Mettre le md dans le repo
                 httpOptions
             )
-            .subscribe((r : any) => {
-                let res = r as string;
-                let json = evaluate(res);
+            .subscribe((r: any) => {
+                const res = r as string;
+                const json = evaluate(res);
                 this.preprocessData(json);
             });
     }
@@ -71,9 +70,7 @@ export class ProgramComponent implements OnInit, OnChanges {
     }
     preprocessData(da: any) {
         ////// Preprocess data //////
-        console.log(da)
         this.data = da;
-
         ////// Favorites /////
 
         try {
@@ -127,6 +124,7 @@ export class ProgramComponent implements OnInit, OnChanges {
                 });
             });
         });
+        //          this.show = true;
     }
 
     open(content: TemplateRef<any>) {
