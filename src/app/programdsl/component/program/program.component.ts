@@ -55,7 +55,7 @@ export class ProgramComponent implements OnInit, OnChanges {
         );
         httpClient
             .get(
-                "https://raw.githubusercontent.com/gwendal-jouneaux/mulder-jamstack.github.io/src/content/agenda/models.md", // Mettre le md dans le repo
+                "https://raw.githubusercontent.com/mulder-jamstack/mulder-jamstack.github.io/src/content/agenda/models.md", // Mettre le md dans le repo
                 httpOptions
             )
             .subscribe((r: any) => {
