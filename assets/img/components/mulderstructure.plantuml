@@ -1,0 +1,50 @@
+@startuml
+package "app.module" {
+}
+
+package "error" {
+[Error500]
+[Error401]
+[Error404]
+}
+
+
+package "icons" {
+rectangle "fontAwesomeSolidIcons"
+rectangle "fontAwesomeRegularIcons"
+rectangle "fontAwesomeBrandsIcons"
+}
+package "navigation"{
+  [footer]
+  [top-nav]
+  [layout-error]
+  [mulder-layout]
+}
+package "mulder"{
+  [DynamicMarkdown]
+  [Home]
+[About]
+[Blogs]
+[Blog]
+[Static]
+[Publications]
+[SurveyMarkup]
+[AgendaDSL]
+
+}
+package "surveyplugin"{
+  [survey]
+
+
+}
+package "agendaplugin"{
+  [AgendaDSL]
+}
+
+app.module-->mulder
+mulder --> error
+mulder --> icons
+mulder --> agendaplugin
+mulder --> surveyplugin
+mulder --> navigation
+@enduml

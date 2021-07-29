@@ -1,0 +1,806 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 1.1.1">
+        <meta charset="utf-8">
+        <title>Mulder: Empowering the JAMStack with DSLs</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">svg:not(:root).svg-inline--fa {
+  overflow: visible;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.225em;
+}
+.svg-inline--fa.fa-w-1 {
+  width: 0.0625em;
+}
+.svg-inline--fa.fa-w-2 {
+  width: 0.125em;
+}
+.svg-inline--fa.fa-w-3 {
+  width: 0.1875em;
+}
+.svg-inline--fa.fa-w-4 {
+  width: 0.25em;
+}
+.svg-inline--fa.fa-w-5 {
+  width: 0.3125em;
+}
+.svg-inline--fa.fa-w-6 {
+  width: 0.375em;
+}
+.svg-inline--fa.fa-w-7 {
+  width: 0.4375em;
+}
+.svg-inline--fa.fa-w-8 {
+  width: 0.5em;
+}
+.svg-inline--fa.fa-w-9 {
+  width: 0.5625em;
+}
+.svg-inline--fa.fa-w-10 {
+  width: 0.625em;
+}
+.svg-inline--fa.fa-w-11 {
+  width: 0.6875em;
+}
+.svg-inline--fa.fa-w-12 {
+  width: 0.75em;
+}
+.svg-inline--fa.fa-w-13 {
+  width: 0.8125em;
+}
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+}
+.svg-inline--fa.fa-w-15 {
+  width: 0.9375em;
+}
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+}
+.svg-inline--fa.fa-w-17 {
+  width: 1.0625em;
+}
+.svg-inline--fa.fa-w-18 {
+  width: 1.125em;
+}
+.svg-inline--fa.fa-w-19 {
+  width: 1.1875em;
+}
+.svg-inline--fa.fa-w-20 {
+  width: 1.25em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: 0.3em;
+  width: auto;
+}
+.svg-inline--fa.fa-border {
+  height: 1.5em;
+}
+.svg-inline--fa.fa-li {
+  width: 2em;
+}
+.svg-inline--fa.fa-fw {
+  width: 1.25em;
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: #ff253a;
+  border-radius: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  height: 1.5em;
+  line-height: 1;
+  max-width: 5em;
+  min-width: 1.5em;
+  overflow: hidden;
+  padding: 0.25em;
+  right: 0;
+  text-overflow: ellipsis;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: 0;
+  left: 0;
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: 0;
+  right: auto;
+  top: 0;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-lg {
+  font-size: 1.3333333333em;
+  line-height: 0.75em;
+  vertical-align: -0.0667em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit;
+}
+
+.fa-border {
+  border: solid 0.08em #eee;
+  border-radius: 0.1em;
+  padding: 0.2em 0.25em 0.15em;
+}
+
+.fa-pull-left {
+  float: left;
+}
+
+.fa-pull-right {
+  float: right;
+}
+
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.far.fa-pull-left,
+.fal.fa-pull-left,
+.fab.fa-pull-left {
+  margin-right: 0.3em;
+}
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.far.fa-pull-right,
+.fal.fa-pull-right,
+.fab.fa-pull-right {
+  margin-left: 0.3em;
+}
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+}
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+          animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: #fff;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: 0.4;
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: 1;
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse {
+  color: #fff;
+}</style><link rel="icon" type="image/x-icon" href="favicon.ico">
+        <style type="text/css">@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OUuhv.woff) format('woff');}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFVZ0d.woff) format('woff');}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUuhv.woff) format('woff');}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOUuhv.woff) format('woff');}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OX-hpKKSTj5PW.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OVuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OXuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OUehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OXehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OXOhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN_r8OUuhpKKSTjw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFWJ0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFUZ0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFWZ0bf8pkAp6a.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFVp0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFWp0bf8pkAp6a.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem8YaGs126MiZpBA-UFVZ0bf8pkAg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOX-hpKKSTj5PW.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOVuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOXuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOXehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOXOhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUuhpKKSTjw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOX-hpKKSTj5PW.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOVuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOXuhpKKSTj5PW.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOUehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOXehpKKSTj5PW.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOXOhpKKSTj5PW.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v20/mem5YaGs126MiZpBA-UN8rsOUuhpKKSTjw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+        <script src="https://cdn.ckeditor.com/4.16.0/standard-all/ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
+    <link rel="stylesheet" href="styles.ff50e0f507af85732862.css"><style></style><script charset="utf-8" src="7-es2015.4cec06bda19177822840.js"></script><style id="bootstrapmaterial.sv_main"></style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>[_nghost-dmu-c37]   fa-icon[_ngcontent-dmu-c37]{font-size:20px;vertical-align:text-top}[_nghost-dmu-c37]   a.icon[_ngcontent-dmu-c37]{padding:0 10px!important}</style><script>window['ScullyIO']='generated';</script></head>
+    <body scully-version="1.1.1">
+        <app-root _nghost-dmu-c41="" ng-version="11.0.1"><router-outlet _ngcontent-dmu-c41=""></router-outlet><mulder-static _nghost-dmu-c49=""><mulder-layout _ngcontent-dmu-c49="" _nghost-dmu-c40=""><mulder-top-nav _ngcontent-dmu-c40="" _nghost-dmu-c37=""><nav _ngcontent-dmu-c37="" id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top"><div _ngcontent-dmu-c37="" class="container"><a _ngcontent-dmu-c37="" routerlink="/" class="navbar-brand" href="/">Mulder</a><button _ngcontent-dmu-c37="" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><fa-icon _ngcontent-dmu-c37="" class="ng-fa-icon ml-1"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg></fa-icon></button><div _ngcontent-dmu-c37="" class="navbar-collapse collapse" style=""><ul _ngcontent-dmu-c37="" class="navbar-nav ml-auto"><li _ngcontent-dmu-c37="" class="nav-item"><a _ngcontent-dmu-c37="" class="nav-link" href="/"><fa-icon _ngcontent-dmu-c37="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" class="svg-inline--fa fa-home fa-w-18 fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="transform-origin: 0.5625em 0em;"><g transform="translate(288 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" transform="translate(-288 -256)"></path></g></g></svg></fa-icon><!----> home</a></li><li _ngcontent-dmu-c37="" class="nav-item"><a _ngcontent-dmu-c37="" class="nav-link" href="/s/motivations"><fa-icon _ngcontent-dmu-c37="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="radiation-alt" class="svg-inline--fa fa-radiation-alt fa-w-16 fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="transform-origin: 0.484375em 0em;"><g transform="translate(248 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M312 256h79.1c9.2 0 16.9-7.7 16-16.8-4.6-43.6-27-81.8-59.5-107.8-7.6-6.1-18.8-4.5-24 3.8L281.9 202c18 11.2 30.1 31.2 30.1 54zm-97.8 54.1L172.4 377c-4.9 7.8-2.4 18.4 5.8 22.5 21.1 10.4 44.7 16.5 69.8 16.5s48.7-6.1 69.9-16.5c8.2-4.1 10.6-14.7 5.8-22.5l-41.8-66.9c-9.8 6.2-21.4 9.9-33.8 9.9s-24.1-3.7-33.9-9.9zM104.9 256H184c0-22.8 12.1-42.8 30.2-54.1l-41.7-66.8c-5.2-8.3-16.4-9.9-24-3.8-32.6 26-54.9 64.2-59.5 107.8-1.1 9.2 6.7 16.9 15.9 16.9zM248 504c137 0 248-111 248-248S385 8 248 8 0 119 0 256s111 248 248 248zm0-432c101.5 0 184 82.5 184 184s-82.5 184-184 184S64 357.5 64 256 146.5 72 248 72zm0 216c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32z" transform="translate(-248 -256)"></path></g></g></svg></fa-icon><!----> Motivations</a></li><!----><li _ngcontent-dmu-c37="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-dmu-c37="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="component"><fa-icon _ngcontent-dmu-c37="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="project-diagram" class="svg-inline--fa fa-project-diagram fa-w-20 fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="transform-origin: 0.625em 0em;"><g transform="translate(320 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z" transform="translate(-320 -256)"></path></g></g></svg></fa-icon><!----> component </a><div _ngcontent-dmu-c37="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="component" x-placement="bottom"><a _ngcontent-dmu-c37="" href="/s/webcomponent" class="dropdown-item">Undertanding the notion of Web component</a><a _ngcontent-dmu-c37="" href="/s/mulderstructure" class="dropdown-item">Undertanding the mulder page structure</a><a _ngcontent-dmu-c37="" href="/s/componentabout" class="dropdown-item">Learning through example: a simple component</a><a _ngcontent-dmu-c37="" href="/about" class="dropdown-item">A simple angular component: About page</a><a _ngcontent-dmu-c37="" href="/s/componentpublications" class="dropdown-item">Learning through example: a more complex component</a><a _ngcontent-dmu-c37="" href="/publications" class="dropdown-item">A more complex angular component: Publications pages</a><a _ngcontent-dmu-c37="" href="/s/componentrouting" class="dropdown-item">Understanding routing</a><a _ngcontent-dmu-c37="" href="/foo" class="dropdown-item">Routing to an error page</a><!----></div></li><li _ngcontent-dmu-c37="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-dmu-c37="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="markup"><fa-icon _ngcontent-dmu-c37="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="infinity" class="svg-inline--fa fa-infinity fa-w-20 fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="transform-origin: 0.625em 0em;"><g transform="translate(320 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M471.1 96C405 96 353.3 137.3 320 174.6 286.7 137.3 235 96 168.9 96 75.8 96 0 167.8 0 256s75.8 160 168.9 160c66.1 0 117.8-41.3 151.1-78.6 33.3 37.3 85 78.6 151.1 78.6 93.1 0 168.9-71.8 168.9-160S564.2 96 471.1 96zM168.9 320c-40.2 0-72.9-28.7-72.9-64s32.7-64 72.9-64c38.2 0 73.4 36.1 94 64-20.4 27.6-55.9 64-94 64zm302.2 0c-38.2 0-73.4-36.1-94-64 20.4-27.6 55.9-64 94-64 40.2 0 72.9 28.7 72.9 64s-32.7 64-72.9 64z" transform="translate(-320 -256)"></path></g></g></svg></fa-icon><!----> markup </a><div _ngcontent-dmu-c37="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="markup" x-placement="bottom"><a _ngcontent-dmu-c37="" href="/s/scully" class="dropdown-item">Understanding Scully and project structure</a><a _ngcontent-dmu-c37="" href="/blog" class="dropdown-item">Static blog demo</a><a _ngcontent-dmu-c37="" href="/s/motivations" class="dropdown-item">Static MD demo</a><!----></div></li><li _ngcontent-dmu-c37="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-dmu-c37="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="Flexibility"><fa-icon _ngcontent-dmu-c37="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders-h" class="svg-inline--fa fa-sliders-h fa-w-16 fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform-origin: 0.5em 0em;"><g transform="translate(256 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z" transform="translate(-256 -256)"></path></g></g></svg></fa-icon><!----> Flexibility </a><div _ngcontent-dmu-c37="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="Flexibility" x-placement="bottom"><a _ngcontent-dmu-c37="" href="/s/flexibility" class="dropdown-item">Configure Static VS Dynamic</a><a _ngcontent-dmu-c37="" href="/s/dynamicmd" class="dropdown-item">Understanding dynamic md</a><a _ngcontent-dmu-c37="" href="/d/teaching/secuweb" class="dropdown-item">Dynamic MD demo</a><!----></div></li><li _ngcontent-dmu-c37="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-dmu-c37="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="DSL"><fa-icon _ngcontent-dmu-c37="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-double" class="svg-inline--fa fa-check-double fa-w-16 fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform-origin: 0.5em 0em;"><g transform="translate(256 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M505 174.8l-39.6-39.6c-9.4-9.4-24.6-9.4-33.9 0L192 374.7 80.6 263.2c-9.4-9.4-24.6-9.4-33.9 0L7 302.9c-9.4 9.4-9.4 24.6 0 34L175 505c9.4 9.4 24.6 9.4 33.9 0l296-296.2c9.4-9.5 9.4-24.7.1-34zm-324.3 106c6.2 6.3 16.4 6.3 22.6 0l208-208.2c6.2-6.3 6.2-16.4 0-22.6L366.1 4.7c-6.2-6.3-16.4-6.3-22.6 0L192 156.2l-55.4-55.5c-6.2-6.3-16.4-6.3-22.6 0L68.7 146c-6.2 6.3-6.2 16.4 0 22.6l112 112.2z" transform="translate(-256 -256)"></path></g></g></svg></fa-icon><!----> DSL </a><div _ngcontent-dmu-c37="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="DSL" x-placement="bottom"><a _ngcontent-dmu-c37="" href="/s/whydsl" class="dropdown-item">Why using DSL</a><a _ngcontent-dmu-c37="" href="/s/dslsurvey" class="dropdown-item">DSL1: markup syntax for surveyjs</a><a _ngcontent-dmu-c37="" href="/surveydemo" class="dropdown-item">DSL1 demo</a><a _ngcontent-dmu-c37="" href="/dslconfagenda" class="dropdown-item">DSL2: a DSL for a conference agenda</a><a _ngcontent-dmu-c37="" href="/s/dsldesign" class="dropdown-item">Design your own DSL and embed it in Mulder</a><!----></div></li><!----><li _ngcontent-dmu-c37="" class="nav-item"><a _ngcontent-dmu-c37="" href="https://github.com/mulder-jamstack/mulder-jamstack.github.io" target="_blank" class="nav-link icon"><fa-icon _ngcontent-dmu-c37="" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></fa-icon></a></li></ul></div></div></nav></mulder-top-nav><mulder-main-header _ngcontent-dmu-c49="" _nghost-dmu-c44=""><header _ngcontent-dmu-c44="" class="masthead" style="background-image: url(&quot;assets/img/scully.jpg&quot;);"><div _ngcontent-dmu-c44="" class="overlay"></div><div _ngcontent-dmu-c44="" class="container"><div _ngcontent-dmu-c44="" class="row"><div _ngcontent-dmu-c44="" class="col-lg-8 col-md-10 mx-auto"><div _ngcontent-dmu-c44="" class="site-heading"><h1 _ngcontent-dmu-c44="" class="nounderline">Understanding Scully and project structure</h1><span _ngcontent-dmu-c44="" class="subheading"></span><span _ngcontent-dmu-c44="" class="meta"></span></div><!----><!----></div></div></div></header><!----></mulder-main-header><article _ngcontent-dmu-c49=""><div _ngcontent-dmu-c49="" class="container"><div _ngcontent-dmu-c49="" class="row"><div _ngcontent-dmu-c49="" id="blog-content" class="col-lg-12 col-md-12 mx-auto"><!--scullyContent-begin--><div style=" border:1px dotted black;" id="toc" _ngcontent-dmu-c49=""><ul><li onclick="document.getElementById('scully').scrollIntoView();"><a href="/s/scully/#scully">Scully</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('what-is-scully').scrollIntoView();"><a href="/s/scully/#what-is-scully">What is Scully?</a></li><li onclick="document.getElementById('how-does-it-work').scrollIntoView();"><a href="/s/scully/#how-does-it-work">How Does It Work?</a></li><li onclick="document.getElementById('why-choosing-scully').scrollIntoView();"><a href="/s/scully/#why-choosing-scully">Why choosing Scully?</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('speed').scrollIntoView();"><a href="/s/scully/#speed">Speed</a></li><li onclick="document.getElementById('plugin-system').scrollIntoView();"><a href="/s/scully/#plugin-system">Plugin System</a></li><li onclick="document.getElementById('centralized-configuration-file').scrollIntoView();"><a href="/s/scully/#centralized-configuration-file">Centralized Configuration File</a></li><li onclick="document.getElementById('powerful-cli').scrollIntoView();"><a href="/s/scully/#powerful-cli">Powerful CLI</a></li><li onclick="document.getElementById('third-party-integrations').scrollIntoView();"><a href="/s/scully/#third-party-integrations">Third-party Integrations</a></li><li onclick="document.getElementById('after-all-its-just-angular').scrollIntoView();"><a href="/s/scully/#after-all-its-just-angular">After all, It’s just Angular</a></li></ul></ul><li onclick="document.getElementById('mulder-project-structure').scrollIntoView();"><a href="/s/scully/#mulder-project-structure">Mulder project structure</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('blogs-blog-and-static-component').scrollIntoView();"><a href="/s/scully/#blogs-blog-and-static-component">Blogs, blog and static component</a></li><li onclick="document.getElementById('navbar-menu-configuration').scrollIntoView();"><a href="/s/scully/#navbar-menu-configuration">Navbar menu configuration</a></li></ul></ul></div>
+
+<p _ngcontent-dmu-c49="">Mulder is just an instance of <a href="https://scully.io/" _ngcontent-dmu-c49="">scully</a> whose goal is to promote the idea that it is easy to build your own markup languages to facilitate the editing of site content. This offers the benefit of being able to directly use platforms like <a href="https://github.com/" _ngcontent-dmu-c49="">Github</a> or <a href="https://about.gitlab.com/" _ngcontent-dmu-c49="">gitlab</a> as headless CMS while offering the ability to edit this content with rich editors thanks to the support of the Language Servcer Protocol (<a href="https://langserver.org/" _ngcontent-dmu-c49="">LSP</a>) in Web editors like <a href="https://microsoft.github.io/monaco-editor/" _ngcontent-dmu-c49="">monaco</a>.
+So the first step to understanding Mulder is to understand Scully.</p>
+<h1 id="scully" _ngcontent-dmu-c49="">Scully</h1>
+<p _ngcontent-dmu-c49="">Higly inspired from <a href="https://blog.bitsrc.io/scully-the-first-static-site-generator-for-angular-1600ead0b8e1" _ngcontent-dmu-c49="">https://blog.bitsrc.io/scully-the-first-static-site-generator-for-angular-1600ead0b8e1</a></p>
+<h2 id="what-is-scully" _ngcontent-dmu-c49="">What is Scully?</h2>
+<p _ngcontent-dmu-c49="">Scully is a Static Site Generator built on Angular, first released in 2019. An important fact is that Scully uses Chromium, and your OS needs to allow its installation and execution. The best thing about Scully is you’re just coding with Angular. There is no need for rearchitecting or modifying your application.
+More than a simple Static Site Generator, Scully is a Jamstack toolchain for Angular development.
+Scully can be easily integrated with an existing Angular project using a simple command. If you want to use Markdown files and use pre-rendering for your applications, you can make it all possible with Scully.</p>
+<h2 id="how-does-it-work" _ngcontent-dmu-c49="">How Does It Work?</h2>
+<p _ngcontent-dmu-c49="">Scully explores the route structure of your Angular application and uses that to create a list of routes. Then it generates a index.html for each route, pre-rendering each page in your app to plain HTML &amp; CSS, and creates a static version of it. If you have 1000 routes in your application, it will create 1000 html files.</p>
+<img class="mx-auto d-block rounded-lg" src="/assets/img/scully/scullyworkflow.png" width="70%" _ngcontent-dmu-c49="">
+
+<p _ngcontent-dmu-c49="">Once your application is pre-rendered, it will appear on the user’s view; they will not have to wait until all the JavaScript files are loaded to keep engaging with the website.</p>
+<h2 id="why-choosing-scully" _ngcontent-dmu-c49="">Why choosing Scully?</h2>
+<p _ngcontent-dmu-c49="">While Angular kept lacking a Static Site Generator, other popular frameworks and libraries like Vue.js and React were rich with SSGs for years. As a result, currently, they are at the top. So, it wouldn’t be entirely fair to compare Scully with them.
+Still, Scully has some exciting set of features that make it unique among other Static Site Generators.</p>
+<h3 id="speed" _ngcontent-dmu-c49="">Speed</h3>
+<p _ngcontent-dmu-c49="">The most beneficial reason you should be using Scully is that it helps you to establish an excellent user experience.</p>
+<blockquote _ngcontent-dmu-c49="">
+<p _ngcontent-dmu-c49="">Nothing will make your Angular project as fast as using Scully and embracing Jamstack. — Aaron Frost</p>
+</blockquote>
+<p _ngcontent-dmu-c49="">Scully avoids lengthy loading times to load large JavaScript files by pre-rendering the code to a static format. Because there aren’t any client-side scripts to run, the user would be able to view, and the application becomes more responsive.</p>
+<p _ngcontent-dmu-c49="">Also, Scully helps to reduce the normal Angular application size by 10–15 times.</p>
+<h3 id="plugin-system" _ngcontent-dmu-c49="">Plugin System</h3>
+<p _ngcontent-dmu-c49="">Plugins play a major role in static site generators. Scully also has a flexible and extensible plugin system to incorporate route plugins and data transform plugins. (We will come back on this point when discussing about DSL)</p>
+<p _ngcontent-dmu-c49="">This way, you will make your custom functionalities inside Scully or go for different plugins made by the community or built-in plugins to help you do things.
+There are five major types of plugins that let the injection of code into different phases of the Scully Process lifecycle:</p>
+<ul _ngcontent-dmu-c49="">
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">routerplugins</strong>: tell Scully how to grab the data needed from the route-params to be pre-rendered pages.</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">render plugins</strong>: to convert the rendered HTML.</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">fileHandler plugins</strong>: the contentFolder plugin uses them through the rendering phase.</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">routeDiscoveryDone plugins</strong>: called immediately after all routes have been collected and all router plugins have been completed.</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">allDone plugins</strong> are like routeDiscoveryDone plugins, even if they are called after all procedures are performed by Scully.</li>
+</ul>
+<h3 id="centralized-configuration-file" _ngcontent-dmu-c49="">Centralized Configuration File</h3>
+<p _ngcontent-dmu-c49="">You will have access to a config file in each Scully project, and it allows you to manage the whole application from a single place.</p>
+<pre class="language-js" _ngcontent-dmu-c49=""><code class="language-js" _ngcontent-dmu-c49=""><span class="token keyword" _ngcontent-dmu-c49="">export</span> <span class="token keyword" _ngcontent-dmu-c49="">interface</span> <span class="token class-name" _ngcontent-dmu-c49="">ScullyConfig</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+  projectRoot<span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  homeFolder<span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  outDir<span class="token operator" _ngcontent-dmu-c49="">?</span><span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  distFolder<span class="token operator" _ngcontent-dmu-c49="">?</span><span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  routes<span class="token operator" _ngcontent-dmu-c49="">:</span> RouteConfig<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  extraRoutes<span class="token operator" _ngcontent-dmu-c49="">?</span><span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  appPort<span class="token operator" _ngcontent-dmu-c49="">:</span> number<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  hostName<span class="token operator" _ngcontent-dmu-c49="">?</span><span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+  hostUrl<span class="token operator" _ngcontent-dmu-c49="">?</span><span class="token operator" _ngcontent-dmu-c49="">:</span> string<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span></code></pre><p _ngcontent-dmu-c49="">The above example shows a subset of configuration features, and you can easily manage settings like routes, ports, proxy, host URLs, etc.</p>
+<p _ngcontent-dmu-c49="">For example, for mulder, the config file is the following.</p>
+<pre class="language-ts" _ngcontent-dmu-c49=""><code class="language-ts" _ngcontent-dmu-c49=""><span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> ScullyConfig<span class="token punctuation" _ngcontent-dmu-c49="">,</span> setPluginConfig <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"@scullyio/scully"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token string" _ngcontent-dmu-c49="">"prismjs/components/prism-java.js"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token string" _ngcontent-dmu-c49="">"prismjs/components/prism-visual-basic.js"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token string" _ngcontent-dmu-c49="">"prismjs/components/prism-yaml.js"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> getTocPlugin<span class="token punctuation" _ngcontent-dmu-c49="">,</span> TocConfig <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"scully-plugin-toc"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+<span class="token function" _ngcontent-dmu-c49="">setPluginConfig</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token string" _ngcontent-dmu-c49="">"md"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> enableSyntaxHighlighting<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token boolean" _ngcontent-dmu-c49="">true</span> <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+<span class="token keyword" _ngcontent-dmu-c49="">const</span> tocOptions<span class="token operator" _ngcontent-dmu-c49="">:</span> TocConfig <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+    blogAreaSelector<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"#blog-content"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token comment" _ngcontent-dmu-c49="">// where to search for TOC headings</span>
+    insertSelector<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"#toc"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token comment" _ngcontent-dmu-c49="">// where to insert the TOC</span>
+    level<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"h1"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token string" _ngcontent-dmu-c49="">"h2"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token string" _ngcontent-dmu-c49="">"h3"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token comment" _ngcontent-dmu-c49="">// what heading levels to include</span>
+    trailingSlash<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token boolean" _ngcontent-dmu-c49="">true</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token comment" _ngcontent-dmu-c49="">// add trailing slash before the anker ('#')</span>
+    scrollIntoViewOnClick<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token boolean" _ngcontent-dmu-c49="">true</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token comment" _ngcontent-dmu-c49="">// add event to each link that scrolls into view on click:</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">const</span> TocPlugin <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token function" _ngcontent-dmu-c49="">getTocPlugin</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token function" _ngcontent-dmu-c49="">setPluginConfig</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span>TocPlugin<span class="token punctuation" _ngcontent-dmu-c49="">,</span> tocOptions<span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+<span class="token keyword" _ngcontent-dmu-c49="">export</span> <span class="token keyword" _ngcontent-dmu-c49="">const</span> config<span class="token operator" _ngcontent-dmu-c49="">:</span> ScullyConfig <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+    projectRoot<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"./src"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    projectName<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"mulder"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    outDir<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"./dist/static"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    routes<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token comment" _ngcontent-dmu-c49="">// tslint:disable-next-line:prettier</span>
+        <span class="token string" _ngcontent-dmu-c49="">'/s/:slug'</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+            <span class="token keyword" _ngcontent-dmu-c49="">type</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"contentFolder"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+            postRenderers<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"toc"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+            slug<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+                folder<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"./content/static"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+            <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token string" _ngcontent-dmu-c49="">"/blog/:slug"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+            <span class="token keyword" _ngcontent-dmu-c49="">type</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"contentFolder"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+            postRenderers<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"toc"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+            slug<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+                folder<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"./content/blog"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+            <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span></code></pre><h3 id="powerful-cli" _ngcontent-dmu-c49="">Powerful CLI</h3>
+<p _ngcontent-dmu-c49="">Scully’s CLI is  powerful to make both Angular and Angular-hybrid projects feasible.
+This CLI also comes with some command-line options which help you to reduce the development time:</p>
+<ul _ngcontent-dmu-c49="">
+<li _ngcontent-dmu-c49=""><em _ngcontent-dmu-c49="">--baseFilter</em> options allow you to point out specific routes that you need to render and this can save a lot of time since there is no need to pre-render the whole application. (npx scully --baseFilter /route )</li>
+<li _ngcontent-dmu-c49=""><em _ngcontent-dmu-c49="">--configFile/--cf</em> allows using different config files.</li>
+<li _ngcontent-dmu-c49=""><em _ngcontent-dmu-c49="">--stats</em> saves the latest build statics to a JSON file named scullyStats.json and it will include details like numberOfRoutes, generatingTime, routesPerSecond, etc.</li>
+</ul>
+<h3 id="third-party-integrations" _ngcontent-dmu-c49="">Third-party Integrations</h3>
+<p _ngcontent-dmu-c49="">It is possible to generate a Scully site through Github actions. You can build and deploy your Scully site to GitHub Pages using the Github Action Scully Publish. It will allow your users to explore your content in one of the speediest possible ways.</p>
+<h3 id="after-all-its-just-angular" _ngcontent-dmu-c49="">After all, It’s just Angular</h3>
+<p _ngcontent-dmu-c49="">As I mentioned earlier, Angular developers have long been waiting for this, and now they have it. They can create blogs just using Angular.
+Despite Scully being significantly younger than SSG giants like Gatsby and Nuxt.js, it already offers significant features like custom plugins, API integration, 3rd-party scripts, etc.
+So if you are an Angular lover, I don’t see a reason not to use Scully.</p>
+<h1 id="mulder-project-structure" _ngcontent-dmu-c49="">Mulder project structure</h1>
+<p _ngcontent-dmu-c49="">In the current version of Mulder we have developed a simple modular application built from 7 modules inspired by the "<a href="https://github.com/startbootstrap/sb-clean-blog-angular" _ngcontent-dmu-c49="">Clean Blog HTML theme</a>".</p>
+<ul _ngcontent-dmu-c49="">
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">error</strong>: components for managing error page</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">icons</strong>: class for fontawesome icons</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">navigation</strong>: components and guard for managing the navigation within the site</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">surveyplugin</strong>: components and parser for the survey DSL (markup language for <a href="https://surveyjs.io/" _ngcontent-dmu-c49="">surveyJS</a>)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">agendaplugin</strong>: components and parser for the agenda DSL</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">mulder</strong> : Core module that contains some components for this website</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">app.module</strong>: Composite module for assembling all the modules</li>
+</ul>
+<img class="mx-auto d-block rounded-lg" src="assets/img/components/mulderstructure.png" width="100%" _ngcontent-dmu-c49="">
+
+
+<p _ngcontent-dmu-c49="">In these modules, there are the following components.</p>
+<ul _ngcontent-dmu-c49="">
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">About</strong> component: About page of the web site (<em _ngcontent-dmu-c49="">Simple angular component</em>) (presented <a href="/componentabout" _ngcontent-dmu-c49="">here</a>)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">Home</strong> component: Home page of the web site (<em _ngcontent-dmu-c49="">Simple angular component</em>) (could be compared to the about page)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">Publications</strong> component: Publications page of the web site (<em _ngcontent-dmu-c49="">example of complex angular component (reuse of D3 cloud component, dynamycally consume <a href="https://hal.inria.fr/" _ngcontent-dmu-c49="">hal</a> service API</em>)  (presented <a href="/componentpublications" _ngcontent-dmu-c49="">here</a>)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">Blogs</strong> component: blog index pages (<em _ngcontent-dmu-c49="">Use Scully to create the structure of the page</em>)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">Blog</strong>  component: blog post page (<em _ngcontent-dmu-c49="">Use Scully to create the structure of the page</em>)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">Static</strong>  component: static page rendering (<em _ngcontent-dmu-c49="">Use Scully to statically consume md file and generate html page</em>)</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">DynamicMarkdown</strong> component: use to fetch markdown online and automatically render page when loading the page</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">SurveyMarkup</strong> component: First example of the use of a DSL as a markup language</li>
+<li _ngcontent-dmu-c49=""><strong _ngcontent-dmu-c49="">AgendaDSL</strong> component: First example of the use of a DSL as a markup language</li>
+</ul>
+<h2 id="blogs-blog-and-static-component" _ngcontent-dmu-c49="">Blogs, blog and static component</h2>
+<p _ngcontent-dmu-c49="">Scully offers a plugin for editing blog posts written in markdown format. In practical terms, this plugin offers the possibility to convert markdown content with metadata to an html page within our site. Mulder uses this plugin for two types of routes as shown in the scully configuration file.</p>
+<p _ngcontent-dmu-c49="">It is possible to put markdown content in the <em _ngcontent-dmu-c49="">PROJECTROOT/content/static/</em> folder for page renderings like this one or in the <em _ngcontent-dmu-c49="">PROJECTROOT/content/blog/</em> folder for new blog entries. From this, we created three Angular components:</p>
+<ul _ngcontent-dmu-c49="">
+<li _ngcontent-dmu-c49=""><em _ngcontent-dmu-c49="">BlogComponent</em> and <em _ngcontent-dmu-c49="">SaticComponent</em> whose code looks very similar, the purpose of these components is to retrieve the path corresponding to the query to display the html code of the markdown layout correctly.</li>
+<li _ngcontent-dmu-c49=""><em _ngcontent-dmu-c49="">BlogsComponent</em> to list all the blog posts.</li>
+</ul>
+<p _ngcontent-dmu-c49="">The  <em _ngcontent-dmu-c49="">BlogComponent</em> and <em _ngcontent-dmu-c49="">SaticComponent</em> code is rather simple (see below). The behavioural part of the component uses the <em _ngcontent-dmu-c49="">ScullyRoutesService</em> of the standard scully library to retrieve the meta-data entered in the header of the markdown file, this allows for example to retrieve the title of the page, the subtitle, its description but also the image of the banner to display. The html template of the component takes the classic structure of mulder pages by adding the custom tag <em _ngcontent-dmu-c49="">scully-content</em> allowing the scully plugin to replace this part of the page by the html code resulting from the transformation of the markdown file by the <a href="https://github.com/markedjs/marked" _ngcontent-dmu-c49="">marked</a> library.</p>
+<pre class="language-ts" _ngcontent-dmu-c49=""><code class="language-ts" _ngcontent-dmu-c49=""><span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> Component<span class="token punctuation" _ngcontent-dmu-c49="">,</span> OnInit <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"@angular/core"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> ScullyRoutesService <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"@scullyio/ng-lib"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+@<span class="token function" _ngcontent-dmu-c49="">Component</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+    selector<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"mulder-blog"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    templateUrl<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"./blog.component.html"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    styleUrls<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"./blog.component.scss"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span>
+<span class="token keyword" _ngcontent-dmu-c49="">export</span> <span class="token keyword" _ngcontent-dmu-c49="">class</span> <span class="token class-name" _ngcontent-dmu-c49="">BlogComponent</span> <span class="token keyword" _ngcontent-dmu-c49="">implements</span> <span class="token class-name" _ngcontent-dmu-c49="">OnInit</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+    post<span class="token operator" _ngcontent-dmu-c49="">!</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token builtin" _ngcontent-dmu-c49="">any</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+    defaultBackground <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token string" _ngcontent-dmu-c49="">'url("assets/img/home-bg.jpg")'</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+    <span class="token keyword" _ngcontent-dmu-c49="">constructor</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token keyword" _ngcontent-dmu-c49="">private</span> scully<span class="token operator" _ngcontent-dmu-c49="">:</span> ScullyRoutesService<span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span><span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+
+    <span class="token function" _ngcontent-dmu-c49="">ngOnInit</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token keyword" _ngcontent-dmu-c49="">void</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>scully<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">getCurrent</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">subscribe</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span>e<span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token operator" _ngcontent-dmu-c49="">=&gt;</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+            <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>post <span class="token operator" _ngcontent-dmu-c49="">=</span> e<span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+            <span class="token keyword" _ngcontent-dmu-c49="">if</span> <span class="token punctuation" _ngcontent-dmu-c49="">(</span>e<span class="token operator" _ngcontent-dmu-c49="">?.</span>route<span class="token operator" _ngcontent-dmu-c49="">?.</span><span class="token function" _ngcontent-dmu-c49="">startsWith</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token string" _ngcontent-dmu-c49="">"/blog"</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+                <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>defaultBackground <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token string" _ngcontent-dmu-c49="">'url("assets/img/blog-bg.jpg")'</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+            <span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+        <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span></code></pre><pre class="language-html" _ngcontent-dmu-c49=""><code class="language-html" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>mulder-layout</span> <span class="token attr-name" _ngcontent-dmu-c49="">*ngIf</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>mulder-main-header</span> <span class="token attr-name" _ngcontent-dmu-c49="">[backgroundImage]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post?.backgroundImage || defaultBackground<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span> 
+      <span class="token attr-name" _ngcontent-dmu-c49="">[heading]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post?.title<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span> <span class="token attr-name" _ngcontent-dmu-c49="">[subHeading]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post?.subTitle<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span> <span class="token attr-name" _ngcontent-dmu-c49="">[meta]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post?.meta?.join(<span class="token punctuation" _ngcontent-dmu-c49="">'</span>, <span class="token punctuation" _ngcontent-dmu-c49="">'</span>)<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>mulder-main-header</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>article</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+        <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>container<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+            <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>row<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">id</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>blog-content<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>col-lg-12 col-md-12 mx-auto<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>scully-content</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span><span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>scully-content</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+            <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+        <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>article</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+<span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>mulder-layout</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span></code></pre><p _ngcontent-dmu-c49="">This <em _ngcontent-dmu-c49="">BlogsComponent</em> component selects all scully routes that start with the path corresponding to blog entries. It then retrieves the metadata of each blog entry and formats it. The html template of the component follows the classic structure of mulder pages. The  <em _ngcontent-dmu-c49="">BlogsComponent</em> code is the following.</p>
+<pre class="language-ts" _ngcontent-dmu-c49=""><code class="language-ts" _ngcontent-dmu-c49=""><span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> Component<span class="token punctuation" _ngcontent-dmu-c49="">,</span> OnInit <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"@angular/core"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> Router <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"@angular/router"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+<span class="token keyword" _ngcontent-dmu-c49="">import</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span> ScullyRoute<span class="token punctuation" _ngcontent-dmu-c49="">,</span> ScullyRoutesService <span class="token punctuation" _ngcontent-dmu-c49="">}</span> <span class="token keyword" _ngcontent-dmu-c49="">from</span> <span class="token string" _ngcontent-dmu-c49="">"@scullyio/ng-lib"</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+@<span class="token function" _ngcontent-dmu-c49="">Component</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+    selector<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"mulder-blogs"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    templateUrl<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"./blogs.component.html"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    styleUrls<span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"./blogs.component.scss"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span>
+<span class="token keyword" _ngcontent-dmu-c49="">export</span> <span class="token keyword" _ngcontent-dmu-c49="">class</span> <span class="token class-name" _ngcontent-dmu-c49="">BlogsComponent</span> <span class="token keyword" _ngcontent-dmu-c49="">implements</span> <span class="token class-name" _ngcontent-dmu-c49="">OnInit</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+    <span class="token keyword" _ngcontent-dmu-c49="">constructor</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token keyword" _ngcontent-dmu-c49="">private</span> router<span class="token operator" _ngcontent-dmu-c49="">:</span> Router<span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token keyword" _ngcontent-dmu-c49="">private</span> scully<span class="token operator" _ngcontent-dmu-c49="">:</span> ScullyRoutesService<span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span><span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+
+    title<span class="token operator" _ngcontent-dmu-c49="">!</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token builtin" _ngcontent-dmu-c49="">string</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+    blogPosts<span class="token operator" _ngcontent-dmu-c49="">!</span><span class="token operator" _ngcontent-dmu-c49="">:</span> ScullyRoute<span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+    bakgroundImg <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token string" _ngcontent-dmu-c49="">'url("assets/img/home-bg.jpg")'</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+
+    <span class="token function" _ngcontent-dmu-c49="">ngOnInit</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token keyword" _ngcontent-dmu-c49="">void</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>title <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>router<span class="token punctuation" _ngcontent-dmu-c49="">.</span>url<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">replace</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token string" _ngcontent-dmu-c49="">"/"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token string" _ngcontent-dmu-c49="">""</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+        <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>title <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>title<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">charAt</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token number" _ngcontent-dmu-c49="">0</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">toUpperCase</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token operator" _ngcontent-dmu-c49="">+</span> <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>title<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">slice</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token number" _ngcontent-dmu-c49="">1</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+        <span class="token keyword" _ngcontent-dmu-c49="">if</span> <span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>title <span class="token operator" _ngcontent-dmu-c49="">===</span> <span class="token string" _ngcontent-dmu-c49="">"Blog"</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+            <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>bakgroundImg <span class="token operator" _ngcontent-dmu-c49="">=</span> <span class="token string" _ngcontent-dmu-c49="">'url("assets/img/blog-bg.jpg")'</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+        <span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+        <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>scully<span class="token punctuation" _ngcontent-dmu-c49="">.</span>available$<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">subscribe</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span>routes<span class="token operator" _ngcontent-dmu-c49="">:</span> ScullyRoute<span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token operator" _ngcontent-dmu-c49="">=&gt;</span> <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+            <span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>blogPosts <span class="token operator" _ngcontent-dmu-c49="">=</span> routes<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">filter</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span>
+                <span class="token punctuation" _ngcontent-dmu-c49="">(</span>route<span class="token operator" _ngcontent-dmu-c49="">:</span> ScullyRoute<span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token operator" _ngcontent-dmu-c49="">=&gt;</span>
+                    route<span class="token punctuation" _ngcontent-dmu-c49="">.</span>route<span class="token punctuation" _ngcontent-dmu-c49="">.</span><span class="token function" _ngcontent-dmu-c49="">startsWith</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token keyword" _ngcontent-dmu-c49="">this</span><span class="token punctuation" _ngcontent-dmu-c49="">.</span>router<span class="token punctuation" _ngcontent-dmu-c49="">.</span>url<span class="token punctuation" _ngcontent-dmu-c49="">)</span> <span class="token operator" _ngcontent-dmu-c49="">&amp;&amp;</span>
+                    route<span class="token punctuation" _ngcontent-dmu-c49="">.</span>sourceFile<span class="token operator" _ngcontent-dmu-c49="">?.</span><span class="token function" _ngcontent-dmu-c49="">endsWith</span><span class="token punctuation" _ngcontent-dmu-c49="">(</span><span class="token string" _ngcontent-dmu-c49="">".md"</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span>
+            <span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+        <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">)</span><span class="token punctuation" _ngcontent-dmu-c49="">;</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+</code></pre><pre class="language-html" _ngcontent-dmu-c49=""><code class="language-html" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>mulder-layout</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>mulder-main-header</span> <span class="token attr-name" _ngcontent-dmu-c49="">[backgroundImage]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>bakgroundImg<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span> <span class="token attr-name" _ngcontent-dmu-c49="">[heading]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>title<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span>  <span class="token attr-name" _ngcontent-dmu-c49="">[siteHeading]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>true<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>    
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>mulder-main-header</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>ng-container</span> <span class="token attr-name" _ngcontent-dmu-c49="">*ngIf</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>blogPosts<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span>
+        <span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span><span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>container<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+            <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>row<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>col-lg-12 col-md-12 mx-auto<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>div</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post-preview<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span> <span class="token attr-name" _ngcontent-dmu-c49="">*ngFor</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>let post of blogPosts | sortBy:<span class="token punctuation" _ngcontent-dmu-c49="">'</span>desc<span class="token punctuation" _ngcontent-dmu-c49="">'</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                        <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>a</span> <span class="token attr-name" _ngcontent-dmu-c49="">[routerLink]</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post.route<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                            <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>h2</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post-title<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>{{post?.title}}<span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>h2</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                            <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>h3</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post-subtitle<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>{{post?.description}}<span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>h3</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                        <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>a</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                        <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;</span>p</span> <span class="token attr-name" _ngcontent-dmu-c49="">class</span><span class="token attr-value" _ngcontent-dmu-c49=""><span class="token punctuation attr-equals" _ngcontent-dmu-c49="">=</span><span class="token punctuation" _ngcontent-dmu-c49="">"</span>post-meta<span class="token punctuation" _ngcontent-dmu-c49="">"</span></span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>{{post?.categories?.join(', ')}}<span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>p</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+                <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+            <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+        <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>div</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+    <span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>ng-container</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span>
+<span class="token tag" _ngcontent-dmu-c49=""><span class="token tag" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">&lt;/</span>mulder-layout</span><span class="token punctuation" _ngcontent-dmu-c49="">&gt;</span></span></code></pre><p _ngcontent-dmu-c49="">Among the cool feature provided by Scully, Scully offers a command line tool to create new blog posts (i.e. new markdown files).</p>
+<p _ngcontent-dmu-c49="">At the top of that Markdown file there is some information in YAML, this is the Front Matter. This won’t show up in the blog post but we can use it to store information about the blog post. We can also use this metadata in a lot of ways but we’ll talk about that when we make our page of all the blog posts.</p>
+<p _ngcontent-dmu-c49="">You can for example add the following metadata and reuse this metadata to change the layout, change the banner image, ...:</p>
+<pre class="language-txt" _ngcontent-dmu-c49=""><code class="language-txt" _ngcontent-dmu-c49="">---
+layout: blog-post
+title: Add wifi to any camera
+place: Rennes, France
+categories: [OpenWRT,Camera,Canon]
+published: true
+---</code></pre><p _ngcontent-dmu-c49="">To get some content into our blog we can generate a post using yet another generate command. This command will call on Scully’s post generation code and we can pass a name in as well.</p>
+<pre class="language-bash" _ngcontent-dmu-c49=""><code class="language-bash" _ngcontent-dmu-c49="">ng g @scullyio/init:post --name<span class="token operator" _ngcontent-dmu-c49="">=</span><span class="token string" _ngcontent-dmu-c49="">"The First Post in Mulder"</span></code></pre><p _ngcontent-dmu-c49="">The CLI will prompt “What’s the target folder for this post?” We’ll go with the default “blog” directory. In the future we can make specific folders for posts, even nested folders.</p>
+<p _ngcontent-dmu-c49="">It exists also some plugins that automatically add some metadata for your blog posts (<em _ngcontent-dmu-c49="">e.g.</em> <a href="https://scully.io/docs/Reference/plugins/community-plugins/time-to-read/" _ngcontent-dmu-c49="">⌚ scully-plugin-time-to-read 📖 Plugin</a>). Of course you can easily create your own.</p>
+<h2 id="navbar-menu-configuration" _ngcontent-dmu-c49=""><em _ngcontent-dmu-c49="">Navbar</em> menu configuration</h2>
+<p _ngcontent-dmu-c49="">A final part that is made configurable in Mulder is the menu bar. This one consumes a json file (<em _ngcontent-dmu-c49="">src/dynamicRoutes.json</em> see an excerpt of this file below). This file configures the different entries of the menu on two levels and the different associated path. It is also possible to add other meta-data that can be consumed later. These data are consumed statically by the <em _ngcontent-dmu-c49="">nav-bar</em> component hosted the navigation module</p>
+<pre class="language-json" _ngcontent-dmu-c49=""><code class="language-json" _ngcontent-dmu-c49=""><span class="token punctuation" _ngcontent-dmu-c49="">[</span>
+
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">""</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"home"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"orderpath"</span> <span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token number" _ngcontent-dmu-c49="">1</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/motivations"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"Motivations"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"orderpath"</span> <span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token number" _ngcontent-dmu-c49="">2</span>
+
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/webcomponent"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/Undertanding the notion of Web component"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"orderpath"</span> <span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token number" _ngcontent-dmu-c49="">3</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/mulderstructure"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/Undertanding the mulder page structure"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/componentabout"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/Learning through example: a simple component"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"about"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/A simple angular component: About page"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/componentpublications"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/Learning through example: a more complex component"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"publications"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/A more complex angular component: Publications pages"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/componentrouting"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/Understanding routing"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"foo"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"component/Routing to an error page"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/scully"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"markup/Understanding Scully and project structure"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"orderpath"</span> <span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token number" _ngcontent-dmu-c49="">4</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"blog"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"markup/Static blog demo"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/motivations"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"markup/Static MD demo"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/dynamicmd"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"markup/Understanding dynamic md"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"d/teaching/secuweb"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"markup/Dynamic MD demo"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"title"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"Demo Hackmd"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"subTitle"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"Demo Hackmd"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"meta"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"demo"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token string" _ngcontent-dmu-c49="">"dynamic"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span> <span class="token string" _ngcontent-dmu-c49="">"md"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"mdsource"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"https://hackmd.diverse-team.fr/D9nr78AzSX2V9i5EOJ6hzA"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"tocrootselector"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"#cours"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"tocselector"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token punctuation" _ngcontent-dmu-c49="">[</span><span class="token string" _ngcontent-dmu-c49="">"h1"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span><span class="token string" _ngcontent-dmu-c49="">"h2"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span><span class="token string" _ngcontent-dmu-c49="">"h3"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span><span class="token string" _ngcontent-dmu-c49="">"h4"</span><span class="token punctuation" _ngcontent-dmu-c49="">]</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"toctitle"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"Plan"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/flexibility"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"Flexibility/Configure Static VS Dynamic"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"orderpath"</span> <span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token number" _ngcontent-dmu-c49="">5</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/whydsl"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"DSL/Why using DSL"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"orderpath"</span> <span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token number" _ngcontent-dmu-c49="">6</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/dslsurvey"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"DSL/DSL1: markup syntax for surveyjs"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/dslconfagenda"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"DSL/DSL2: a DSL for a conference agenda"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">{</span>
+        <span class="token property" _ngcontent-dmu-c49="">"path"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"s/dsldesign"</span><span class="token punctuation" _ngcontent-dmu-c49="">,</span>
+        <span class="token property" _ngcontent-dmu-c49="">"menupath"</span><span class="token operator" _ngcontent-dmu-c49="">:</span> <span class="token string" _ngcontent-dmu-c49="">"DSL/Design your own DSL and embed it in Mulder/Scully"</span>
+    <span class="token punctuation" _ngcontent-dmu-c49="">}</span>
+<span class="token punctuation" _ngcontent-dmu-c49="">]</span>
+</code></pre><!--scullyContent-end--><scully-content _ngcontent-dmu-c49=""></scully-content><script>try {window['scullyContent'] = {cssId:"_ngcontent-dmu-c49",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div></div></div></article><mulder-footer _ngcontent-dmu-c40="" _nghost-dmu-c38=""><footer _ngcontent-dmu-c38=""><div _ngcontent-dmu-c38="" class="container"><div _ngcontent-dmu-c38="" class="row"><div _ngcontent-dmu-c38="" class="col-lg-8 col-md-10 mx-auto"><ul _ngcontent-dmu-c38="" class="list-inline text-center"><li _ngcontent-dmu-c38="" class="list-inline-item"><a _ngcontent-dmu-c38="" href="https://twitter.com/barais" target="_blank"><fa-stack _ngcontent-dmu-c38="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-dmu-c38="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg></fa-icon><fa-icon _ngcontent-dmu-c38="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16 fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-dmu-c38="" class="list-inline-item"><a _ngcontent-dmu-c38="" href="http://scholar.google.fr/citations?user=LV5i8X4AAAAJ&amp;hl=en" target="_blank"><fa-stack _ngcontent-dmu-c38="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-dmu-c38="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg></fa-icon><fa-icon _ngcontent-dmu-c38="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" class="svg-inline--fa fa-google fa-w-16 fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-dmu-c38="" class="list-inline-item"><a _ngcontent-dmu-c38="" href="https://www.facebook.com/obarais" target="_blank"><fa-stack _ngcontent-dmu-c38="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-dmu-c38="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg></fa-icon><fa-icon _ngcontent-dmu-c38="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10 fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-dmu-c38="" class="list-inline-item"><a _ngcontent-dmu-c38="" href="https://github.com/mulder-jamstack" target="_blank"><fa-stack _ngcontent-dmu-c38="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-dmu-c38="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg></fa-icon><fa-icon _ngcontent-dmu-c38="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16 fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-dmu-c38="" class="list-inline-item"><a _ngcontent-dmu-c38="" href="http://www.linkedin.com/in/olivierbarais" target="_blank"><fa-stack _ngcontent-dmu-c38="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-dmu-c38="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16 fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg></fa-icon><fa-icon _ngcontent-dmu-c38="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14 fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></fa-icon></fa-stack></a></li></ul><p _ngcontent-dmu-c38="" class="copyright text-muted">Copyright © <a _ngcontent-dmu-c38="" target="_blank" href="https://www.diverse-team.fr/">INRIA DiverSE Team 2021</a></p></div></div></div></footer></mulder-footer></mulder-layout><!----></mulder-static><!----></app-root>
+    <script id="ScullyIO-transfer-state"></script><script src="runtime-es2015.b9667f4497175196e3d3.js" type="module"></script><script src="runtime-es5.b9667f4497175196e3d3.js" nomodule="" defer=""></script><script src="polyfills-es5.b440cd76971bb70b7ed0.js" nomodule="" defer=""></script><script src="polyfills-es2015.bab941f2e016a09e40d5.js" type="module"></script><script src="main-es2015.405d539cff2d2fc1f4fc.js" type="module"></script><script src="main-es5.405d539cff2d2fc1f4fc.js" nomodule="" defer=""></script>
+
+</body></html>
