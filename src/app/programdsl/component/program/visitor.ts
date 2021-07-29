@@ -57,7 +57,7 @@ function calcRoot(node: Parser.Root, context: Context): object[] {
 
                         // tslint:disable-next-line:no-non-null-assertion
                         if (event!.abstract)
-                            theEvent.description = event!.abstract;
+                            theEvent.abstract = event!.abstract;
                         if (event!.type) theEvent.type = event!.type;
                         if (event!.organizers)
                             theEvent.organizers = event!.organizers;
