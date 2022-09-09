@@ -15,6 +15,8 @@ import 'prismjs/components/prism-java.js';
 import 'prismjs/components/prism-visual-basic.js';
 import 'prismjs/components/prism-yaml.js';
 import 'prismjs/components/prism-bash.js';
+import 'prismjs/components/prism-md.js';
+import 'prismjs/components/prism-grammar.js';
 import {
     TocConfig,
     TocPluginName,
