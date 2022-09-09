@@ -80,7 +80,7 @@ Now let's create the grammar associated with this language. We will use xtext be
 
 Below is an extract of this grammar (*to be consolidated*) 
 
-```grammar
+```bnf
 
 grammar org.xtext.example.markdown.Markdown with org.eclipse.xtext.common.Terminals
 
