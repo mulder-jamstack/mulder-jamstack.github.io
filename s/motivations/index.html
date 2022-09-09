@@ -1,0 +1,880 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Scully 0.0.0"><style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Solid";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Regular";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Light";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Thin";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-counter-scale, 0.25));
+          transform: scale(var(--fa-counter-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  -webkit-transform: scale(var(--fa-layers-scale, 0.25));
+          transform: scale(var(--fa-layers-scale, 0.25));
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(var(--fa-li-width, 2em) * -1);
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  -webkit-animation-name: fa-beat;
+          animation-name: fa-beat;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  -webkit-animation-name: fa-bounce;
+          animation-name: fa-bounce;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  -webkit-animation-name: fa-fade;
+          animation-name: fa-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  -webkit-animation-name: fa-beat-fade;
+          animation-name: fa-beat-fade;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+          animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  -webkit-animation-name: fa-flip;
+          animation-name: fa-flip;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, ease-in-out);
+          animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  -webkit-animation-name: fa-shake;
+          animation-name: fa-shake;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-delay: var(--fa-animation-delay, 0s);
+          animation-delay: var(--fa-animation-delay, 0s);
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 2s);
+          animation-duration: var(--fa-animation-duration, 2s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, linear);
+          animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  -webkit-animation-name: fa-spin;
+          animation-name: fa-spin;
+  -webkit-animation-direction: var(--fa-animation-direction, normal);
+          animation-direction: var(--fa-animation-direction, normal);
+  -webkit-animation-duration: var(--fa-animation-duration, 1s);
+          animation-duration: var(--fa-animation-duration, 1s);
+  -webkit-animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+          animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  -webkit-animation-timing-function: var(--fa-animation-timing, steps(8));
+          animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    -webkit-animation-delay: -1ms;
+            animation-delay: -1ms;
+    -webkit-animation-duration: 1ms;
+            animation-duration: 1ms;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@-webkit-keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    -webkit-transform: scale(var(--fa-beat-scale, 1.25));
+            transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@-webkit-keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+            transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+            transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    -webkit-transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+            transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+            transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@-webkit-keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@-webkit-keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(var(--fa-beat-fade-scale, 1.125));
+            transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@-webkit-keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    -webkit-transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+            transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@-webkit-keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@keyframes fa-shake {
+  0% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  4% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  8%, 24% {
+    -webkit-transform: rotate(-18deg);
+            transform: rotate(-18deg);
+  }
+  12%, 28% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+  16% {
+    -webkit-transform: rotate(-22deg);
+            transform: rotate(-22deg);
+  }
+  20% {
+    -webkit-transform: rotate(22deg);
+            transform: rotate(22deg);
+  }
+  32% {
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+  36% {
+    -webkit-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+  40%, 100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  -webkit-transform: scale(1, -1);
+          transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  -webkit-transform: rotate(var(--fa-rotate-angle, none));
+          transform: rotate(var(--fa-rotate-angle, none));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}
+
+.fad.fa-inverse,
+.fa-duotone.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}</style><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <meta charset="utf-8">
+        <title>Mulder: Empowering the JAMStack with DSLs</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <style type="text/css">@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu0SC55K5gw.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu0SC55K5gw.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu0SC55K5gw.woff2) format('woff2');unicode-range:U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu0SC55K5gw.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu0SC55K5gw.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu0SC55K5gw.woff2) format('woff2');unicode-range:U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu0SC55K5gw.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu0SC55K5gw.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu0SC55K5gw.woff2) format('woff2');unicode-range:U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSKmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSumu0SC55K5gw.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSOmu0SC55K5gw.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSymu0SC55K5gw.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS2mu0SC55K5gw.woff2) format('woff2');unicode-range:U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSCmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTSGmu0SC55K5gw.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v34/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-mu0SC55I.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+        <script src="https://cdn.ckeditor.com/4.16.0/standard-all/ckeditor.js"></script><style>.cke{visibility:hidden;}</style>
+    <link rel="stylesheet" href="styles.8ee71c644bfcf6fc.css"><style id="bootstrapmaterial.sv_main"></style><style>
+      :host {
+        display: none;
+      }
+      scully-content {
+        display: none;
+      }
+    </style><style>[_nghost-vpm-c18]   fa-icon[_ngcontent-vpm-c18]{font-size:20px;vertical-align:text-top}[_nghost-vpm-c18]   a.icon[_ngcontent-vpm-c18]{padding:0 10px!important}</style><script>window['ScullyIO']='generated';</script></head>
+    <body scully-version="0.0.0">
+        <app-root _nghost-vpm-c21="" ng-version="14.2.1"><router-outlet _ngcontent-vpm-c21=""></router-outlet><mulder-static _nghost-vpm-c30=""><mulder-layout _ngcontent-vpm-c30="" _nghost-vpm-c20=""><mulder-top-nav _ngcontent-vpm-c20="" _nghost-vpm-c18=""><nav _ngcontent-vpm-c18="" id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top"><div _ngcontent-vpm-c18="" class="container"><a _ngcontent-vpm-c18="" routerlink="/" class="navbar-brand" href="/">Mulder</a><button _ngcontent-vpm-c18="" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><fa-icon _ngcontent-vpm-c18="" class="ng-fa-icon ml-1"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></fa-icon></button><div _ngcontent-vpm-c18="" class="collapse navbar-collapse"><ul _ngcontent-vpm-c18="" class="navbar-nav ml-auto"><li _ngcontent-vpm-c18="" class="nav-item"><a _ngcontent-vpm-c18="" class="nav-link" href="/"><fa-icon _ngcontent-vpm-c18="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="house" class="svg-inline--fa fa-house fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="transform-origin: 0.5625em 0em;"><g transform="translate(288 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" transform="translate(-288 -256)"></path></g></g></svg></fa-icon><!----> home</a></li><li _ngcontent-vpm-c18="" class="nav-item"><a _ngcontent-vpm-c18="" class="nav-link" href="/s/motivations"><fa-icon _ngcontent-vpm-c18="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-radiation" class="svg-inline--fa fa-circle-radiation fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform-origin: 0.5em 0em;"><g transform="translate(256 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M256 448C150 448 64 362 64 256S150 64 256 64s192 86 192 192s-86 192-192 192zm0 64c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM200 256c0-20.7 11.3-38.8 28-48.5l-36-62.3c-8.8-15.3-28.7-20.8-42-9c-25.6 22.6-43.9 53.3-50.9 88.1C95.7 241.5 110.3 256 128 256l72 0zm28 48.5l-36 62.4c-8.8 15.3-3.6 35.2 13.1 40.8c16 5.4 33.1 8.3 50.9 8.3s34.9-2.9 50.9-8.3c16.7-5.6 21.9-25.5 13.1-40.8l-36-62.4c-8.2 4.8-17.8 7.5-28 7.5s-19.8-2.7-28-7.5zM312 256l72 0c17.7 0 32.3-14.5 28.8-31.8c-7-34.8-25.3-65.5-50.9-88.1c-13.2-11.7-33.1-6.3-42 9l-36 62.3c16.7 9.7 28 27.8 28 48.5zm-56 32c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z" transform="translate(-256 -256)"></path></g></g></svg></fa-icon><!----> Motivations</a></li><!----><li _ngcontent-vpm-c18="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-vpm-c18="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="component"><fa-icon _ngcontent-vpm-c18="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="diagram-project" class="svg-inline--fa fa-diagram-project fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="transform-origin: 0.5625em 0em;"><g transform="translate(288 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V96H384V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H432c-26.5 0-48-21.5-48-48V160H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H272c-26.5 0-48-21.5-48-48V336c0-1.7 .1-3.4 .3-5L144 224H48c-26.5 0-48-21.5-48-48V80z" transform="translate(-288 -256)"></path></g></g></svg></fa-icon><!----> component </a><div _ngcontent-vpm-c18="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="component" data-bs-popper="static"><a _ngcontent-vpm-c18="" href="/s/webcomponent" class="dropdown-item">Undertanding the notion of Web component</a><a _ngcontent-vpm-c18="" href="/s/mulderstructure" class="dropdown-item">Undertanding the mulder page structure</a><a _ngcontent-vpm-c18="" href="/s/componentabout" class="dropdown-item">Learning through example: a simple component</a><a _ngcontent-vpm-c18="" href="/about" class="dropdown-item">A simple angular component: About page</a><a _ngcontent-vpm-c18="" href="/s/componentpublications" class="dropdown-item">Learning through example: a more complex component</a><a _ngcontent-vpm-c18="" href="/publications" class="dropdown-item">A more complex angular component: Publications pages</a><a _ngcontent-vpm-c18="" href="/s/componentrouting" class="dropdown-item">Understanding routing</a><a _ngcontent-vpm-c18="" href="/foo" class="dropdown-item">Routing to an error page</a><!----></div></li><li _ngcontent-vpm-c18="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-vpm-c18="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="markup"><fa-icon _ngcontent-vpm-c18="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="infinity" class="svg-inline--fa fa-infinity fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="transform-origin: 0.625em 0em;"><g transform="translate(320 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M0 241.1C0 161 65 96 145.1 96c38.5 0 75.4 15.3 102.6 42.5L320 210.7l72.2-72.2C419.5 111.3 456.4 96 494.9 96C575 96 640 161 640 241.1v29.7C640 351 575 416 494.9 416c-38.5 0-75.4-15.3-102.6-42.5L320 301.3l-72.2 72.2C220.5 400.7 183.6 416 145.1 416C65 416 0 351 0 270.9V241.1zM274.7 256l-72.2-72.2c-15.2-15.2-35.9-23.8-57.4-23.8C100.3 160 64 196.3 64 241.1v29.7c0 44.8 36.3 81.1 81.1 81.1c21.5 0 42.2-8.5 57.4-23.8L274.7 256zm90.5 0l72.2 72.2c15.2 15.2 35.9 23.8 57.4 23.8c44.8 0 81.1-36.3 81.1-81.1V241.1c0-44.8-36.3-81.1-81.1-81.1c-21.5 0-42.2 8.5-57.4 23.8L365.3 256z" transform="translate(-320 -256)"></path></g></g></svg></fa-icon><!----> markup </a><div _ngcontent-vpm-c18="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="markup" data-bs-popper="static"><a _ngcontent-vpm-c18="" href="/s/scully" class="dropdown-item">Understanding Scully and project structure</a><a _ngcontent-vpm-c18="" href="/blog" class="dropdown-item">Static blog demo</a><a _ngcontent-vpm-c18="" href="/s/motivations" class="dropdown-item">Static MD demo</a><!----></div></li><li _ngcontent-vpm-c18="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-vpm-c18="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="Flexibility"><fa-icon _ngcontent-vpm-c18="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sliders" class="svg-inline--fa fa-sliders fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform-origin: 0.5em 0em;"><g transform="translate(256 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M0 416c0-17.7 14.3-32 32-32l54.7 0c12.3-28.3 40.5-48 73.3-48s61 19.7 73.3 48L480 384c17.7 0 32 14.3 32 32s-14.3 32-32 32l-246.7 0c-12.3 28.3-40.5 48-73.3 48s-61-19.7-73.3-48L32 448c-17.7 0-32-14.3-32-32zm192 0c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zM384 256c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm-32-80c32.8 0 61 19.7 73.3 48l54.7 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-54.7 0c-12.3 28.3-40.5 48-73.3 48s-61-19.7-73.3-48L32 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l246.7 0c12.3-28.3 40.5-48 73.3-48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32s-14.3-32-32-32zm73.3 0L480 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l-214.7 0c-12.3 28.3-40.5 48-73.3 48s-61-19.7-73.3-48L32 128C14.3 128 0 113.7 0 96S14.3 64 32 64l86.7 0C131 35.7 159.2 16 192 16s61 19.7 73.3 48z" transform="translate(-256 -256)"></path></g></g></svg></fa-icon><!----> Flexibility </a><div _ngcontent-vpm-c18="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="Flexibility" data-bs-popper="static"><a _ngcontent-vpm-c18="" href="/s/flexibility" class="dropdown-item">Configure Static VS Dynamic</a><a _ngcontent-vpm-c18="" href="/s/dynamicmd" class="dropdown-item">Understanding dynamic md</a><a _ngcontent-vpm-c18="" href="/d/teaching/secuweb" class="dropdown-item">Dynamic MD demo</a><!----></div></li><li _ngcontent-vpm-c18="" ngbdropdown="" class="nav-item dropdown"><a _ngcontent-vpm-c18="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbdropdowntoggle="" class="dropdown-toggle nav-link" style="cursor: pointer;" id="DSL"><fa-icon _ngcontent-vpm-c18="" transform="shrink-2 up-8" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-double" class="svg-inline--fa fa-check-double fa-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="transform-origin: 0.5em 0em;"><g transform="translate(256 256)"><g transform="translate(0, -256)  scale(0.875, 0.875)  rotate(0 0 0)"><path fill="currentColor" d="M374.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 178.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l80 80c12.5 12.5 32.8 12.5 45.3 0l160-160zm96 128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 402.7 86.6 297.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l256-256z" transform="translate(-256 -256)"></path></g></g></svg></fa-icon><!----> DSL </a><div _ngcontent-vpm-c18="" ngbdropdownmenu="" class="dropdown-menu" aria-labelledby="DSL" data-bs-popper="static"><a _ngcontent-vpm-c18="" href="/s/whydsl" class="dropdown-item">Why using DSL</a><a _ngcontent-vpm-c18="" href="/s/dslsurvey" class="dropdown-item">DSL1: markup syntax for surveyjs</a><a _ngcontent-vpm-c18="" href="/surveydemo" class="dropdown-item">DSL1 demo</a><a _ngcontent-vpm-c18="" href="/dslconfagenda" class="dropdown-item">DSL2: a DSL for a conference agenda</a><a _ngcontent-vpm-c18="" href="/s/dsldesign" class="dropdown-item">Design your own DSL and embed it in Mulder</a><!----></div></li><!----><li _ngcontent-vpm-c18="" class="nav-item"><a _ngcontent-vpm-c18="" href="https://github.com/mulder-jamstack/mulder-jamstack.github.io" target="_blank" class="nav-link icon"><fa-icon _ngcontent-vpm-c18="" class="ng-fa-icon"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></fa-icon></a></li></ul></div></div></nav></mulder-top-nav><mulder-main-header _ngcontent-vpm-c30="" _nghost-vpm-c25=""><header _ngcontent-vpm-c25="" class="masthead" style="background-image: url(&quot;assets/img/574152.png&quot;);"><div _ngcontent-vpm-c25="" class="overlay"></div><div _ngcontent-vpm-c25="" class="container"><div _ngcontent-vpm-c25="" class="row"><div _ngcontent-vpm-c25="" class="col-lg-8 col-md-10 mx-auto"><div _ngcontent-vpm-c25="" class="site-heading"><h1 _ngcontent-vpm-c25="" class="nounderline">Mulder motivations</h1><span _ngcontent-vpm-c25="" class="subheading"></span><span _ngcontent-vpm-c25="" class="meta"></span></div><!----><!----></div></div></div></header><!----></mulder-main-header><article _ngcontent-vpm-c30=""><div _ngcontent-vpm-c30="" class="container"><div _ngcontent-vpm-c30="" class="row"><div _ngcontent-vpm-c30="" id="blog-content" class="col-lg-12 col-md-12 mx-auto"><!--scullyContent-begin--><div style=" border:1px dotted black;" id="toc" _ngcontent-vpm-c30=""><ul><li onclick="document.getElementById('embrace-jamstack').scrollIntoView();"><a href="/s/motivations/#embrace-jamstack">Embrace Jamstack</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('the-future-is-highly-distributed').scrollIntoView();"><a href="/s/motivations/#the-future-is-highly-distributed">The future is highly distributed</a></li></ul><li onclick="document.getElementById('comparing-static-code-generator-approach').scrollIntoView();"><a href="/s/motivations/#comparing-static-code-generator-approach">Comparing static code generator approach</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('a-first-step-static-site-generator-ssg-like-jekyll-hugo').scrollIntoView();"><a href="/s/motivations/#a-first-step-static-site-generator-ssg-like-jekyll-hugo">A first step: Static Site Generator (SSG) like Jekyll,, Hugo</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('pros').scrollIntoView();"><a href="/s/motivations/#pros">Pros</a></li><li onclick="document.getElementById('cons').scrollIntoView();"><a href="/s/motivations/#cons">Cons</a></li></ul><li onclick="document.getElementById('a-second-step-gatsby-vuepress-scully').scrollIntoView();"><a href="/s/motivations/#a-second-step-gatsby-vuepress-scully">A second step: Gatsby, VuePress, Scully,</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('pros-1').scrollIntoView();"><a href="/s/motivations/#pros-1">Pros</a></li><li onclick="document.getElementById('cons-1').scrollIntoView();"><a href="/s/motivations/#cons-1">Cons</a></li></ul><li onclick="document.getElementById('mulder-an-extended-scully-powered-by-dsls').scrollIntoView();"><a href="/s/motivations/#mulder-an-extended-scully-powered-by-dsls">Mulder: an extended Scully powered by DSLs</a></li><ul style="margin-bottom: 0px"><li onclick="document.getElementById('why-scully-').scrollIntoView();"><a href="/s/motivations/#why-scully-">Why scully ?</a></li><li onclick="document.getElementById('mulder-empowering-the-jamstack-with-dsls').scrollIntoView();"><a href="/s/motivations/#mulder-empowering-the-jamstack-with-dsls">Mulder: Empowering the JAMStack with DSLs</a></li></ul><li onclick="document.getElementById('getting-started').scrollIntoView();"><a href="/s/motivations/#getting-started">Getting started</a></li></ul></ul></div>
+
+<h1 id="embrace-jamstack" _ngcontent-vpm-c30="">Embrace Jamstack</h1>
+<blockquote _ngcontent-vpm-c30="">
+<p _ngcontent-vpm-c30="">Documentation highly inspired from <a href="https://jamstack.org/" _ngcontent-vpm-c30="">here</a></p>
+</blockquote>
+<p _ngcontent-vpm-c30="">The <a href="https://jamstack.org/" _ngcontent-vpm-c30="">Jamstack architecture</a> has many benefits, whether you’re building a large e-commerce site, SaaS application, conference website or personal blog/site.</p>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Better Performance</strong>
+Why wait for pages to build on the fly when you can generate them at deploy time? When it comes to minimizing the time to first byte, nothing beats pre-built files served over a CDN. Stop the use of WP please 😀</p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Higher Security</strong>
+With server-side processes abstracted into microservice APIs, surface areas for attacks are reduced. You can also leverage the domain expertise of specialist third-party services. Stop the use of WP please 😀</p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Cheaper, Easier Scaling</strong>
+When your deployment amounts to a stack of files that can be served anywhere, scaling is a matter of serving those files in more places. CDNs are perfect for this, and often include scaling in all of their plans.</p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Better Developer Experience</strong>
+Loose coupling and separation of controls allow for more targeted development and debugging, and the expanding selection of CMS options for site generators remove the need to maintain a separate stack for content and marketing.</p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Great portability</strong>, welcome github/gitlab page
+<a href="https://jamstack.org/" _ngcontent-vpm-c30="">Jamstack</a> sites are pre-generated. That means that you can host them from a wide variety of hosting services and have greater ability to move them to your preferred host. Any simple static hosting solution should be able to serve a <a href="https://jamstack.org/" _ngcontent-vpm-c30="">Jamstack</a> site.</p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><a href="https://jamstack.org/" _ngcontent-vpm-c30="">Excellent web site on Jamstack</a></p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><a href="https://www.netlify.com/pdf/oreilly-modern-web-development-on-the-jamstack.pdf" _ngcontent-vpm-c30="">Excellent book on Jamstack</a></p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30=""><a href="https://vimeo.com/163522126" _ngcontent-vpm-c30="">Excellent video introducing Jamstack</a></p>
+</li>
+</ul>
+<h2 id="the-future-is-highly-distributed" _ngcontent-vpm-c30="">The future is highly distributed</h2>
+<p _ngcontent-vpm-c30=""><a href="https://jamstack.org/" _ngcontent-vpm-c30="">Jamstack</a> is the new standard architecture for the web. Using Git workflows and modern build tools, pre-rendered content is served to a CDN and made dynamic through APIs and serverless functions. It is for example easy to use github actions to build and deploy the front. Technologies in the stack include JavaScript frameworks, Static Site Generators, Headless CMSs, CI/CD and CDNs.</p>
+<img class="mx-auto d-block rounded-lg" style="background-color:black;" src="https://d33wubrfki0l68.cloudfront.net/b7d16f7f3654fb8572360301e60d76df254a323e/385ec/img/svg/architecture.svg" width="70%" _ngcontent-vpm-c30="">
+
+<p _ngcontent-vpm-c30="">The work was done during the build, so now the generated site is stable and can be hosted without servers which might require patching, updating and maintain.</p>
+<h1 id="comparing-static-code-generator-approach" _ngcontent-vpm-c30="">Comparing static code generator approach</h1>
+<h2 id="a-first-step-static-site-generator-ssg-like-jekyll-hugo" _ngcontent-vpm-c30="">A first step: Static Site Generator (SSG) like Jekyll,, Hugo</h2>
+<p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Jekyll</strong> is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. Jekyll takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories.</p>
+<p _ngcontent-vpm-c30=""><strong _ngcontent-vpm-c30="">Hugo</strong> is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again. We use it for the DiverSE site and Gemoc Site.</p>
+<h3 id="pros" _ngcontent-vpm-c30="">Pros</h3>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">Open source</li>
+<li _ngcontent-vpm-c30="">Huge community</li>
+<li _ngcontent-vpm-c30="">Plenty of themes, plugins</li>
+<li _ngcontent-vpm-c30="">...</li>
+</ul>
+<h3 id="cons" _ngcontent-vpm-c30="">Cons</h3>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">Developing a new plugin that consume micro-services is a bit paintful</li>
+<li _ngcontent-vpm-c30="">Do not fully embrace the notion of <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" _ngcontent-vpm-c30="">WebComponents</a></li>
+</ul>
+<h2 id="a-second-step-gatsby-vuepress-scully" _ngcontent-vpm-c30="">A second step: Gatsby, VuePress, Scully,</h2>
+<p _ngcontent-vpm-c30=""><a href="https://angular.io/" _ngcontent-vpm-c30="">Angular</a>, <a href="https://vuejs.org/" _ngcontent-vpm-c30="">VueJS</a> and <a href="https://reactjs.org/" _ngcontent-vpm-c30="">React</a> as well as now svelte are excellent frameworks that are very well documented to promote the development of the front end based on the notion of Web component. This notion of Web component is based on the literature around the notion of software component and aims, among other things, to promote reuse, composition and maintainability of the various elements of an application. It was therefore attractive to rely on these frameworks for the development of the front end while allowing server side rendering for the generation of the static pages necessary to respect the <a href="https://jamstack.org/" _ngcontent-vpm-c30="">JamStack</a> approach.
+This is exactly the idea behind Gasby (ICPE website), <a href="scully.io" _ngcontent-vpm-c30="">scully</a> or vuepress based on <a href="https://reactjs.org/" _ngcontent-vpm-c30="">React</a>, <a href="https://angular.io/" _ngcontent-vpm-c30="">Angular</a> and <a href="https://vuejs.org/" _ngcontent-vpm-c30="">VueJS</a> respectively.</p>
+<p _ngcontent-vpm-c30="">The huge interest of these frameworks is to have the best of both worlds between a static site <em _ngcontent-vpm-c30="">à la</em> Hugo or Jekyll and the use of Web components which ease the reuse off-the-shelf components from the <a href="https://angular.io/" _ngcontent-vpm-c30="">Angular</a>, <a href="https://vuejs.org/" _ngcontent-vpm-c30="">VueJS</a>, <a href="https://reactjs.org/" _ngcontent-vpm-c30="">React</a> communities or to develop easily your own Web components by benefiting from all the support of modern IDEs like VSCode for the use of these frameworks. It is the case of <a href="https://www.gatsbyjs.com/" _ngcontent-vpm-c30="">Gatsby</a> based on <a href="https://reactjs.org/" _ngcontent-vpm-c30="">React</a>, <a href="https://vuepress.vuejs.org/" _ngcontent-vpm-c30="">VuePress</a> based on <a href="https://vuejs.org/" _ngcontent-vpm-c30="">VueJS</a> and <a href="https://scully.io/" _ngcontent-vpm-c30="">Scully</a> based on angular.</p>
+<p _ngcontent-vpm-c30="">The developer can then decide whether the content should be static and therefore pre-rendered when passing through the CI or dynamically calculated by consuming the data source when loading the page and benefit from <a href="https://angular.io/" _ngcontent-vpm-c30="">Angular</a>, <a href="https://reactjs.org/" _ngcontent-vpm-c30="">React</a> or <a href="https://vuejs.org/" _ngcontent-vpm-c30="">VueJS</a> for rendering.</p>
+<h3 id="pros-1" _ngcontent-vpm-c30="">Pros</h3>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">Excellent architecture</li>
+<li _ngcontent-vpm-c30="">Easy to develop, to maintain</li>
+<li _ngcontent-vpm-c30="">Could reuse lots of existing components</li>
+<li _ngcontent-vpm-c30="">Easy to create you own theme</li>
+<li _ngcontent-vpm-c30="">...</li>
+</ul>
+<h3 id="cons-1" _ngcontent-vpm-c30="">Cons</h3>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">When consuming static or dynamic data, JSON or other structured data are overused</li>
+</ul>
+<h2 id="mulder-an-extended-scully-powered-by-dsls" _ngcontent-vpm-c30="">Mulder: an extended Scully powered by DSLs</h2>
+<blockquote _ngcontent-vpm-c30="">
+<p _ngcontent-vpm-c30="">Good heavens, to doubt it is more than a failure of the imagination, it's a failure to recognize the limits of our own stupidity. The nascency of our science, the rudiment of our tools. We listen, we search, we look for a sign as if our eyes and ears are good enough, our brains large enough, or egos small enough. <em _ngcontent-vpm-c30="">Cigarette Smoking Man</em></p>
+</blockquote>
+<h3 id="why-scully-" _ngcontent-vpm-c30="">Why scully ?</h3>
+<p _ngcontent-vpm-c30="">I'm a fan of <a href="https://angular.io/" _ngcontent-vpm-c30="">Angular</a> over <a href="https://reactjs.org/" _ngcontent-vpm-c30="">React</a> or <a href="https://vuejs.org/" _ngcontent-vpm-c30="">VueJS</a>, I am not able to explain it, maybe it's because they built the framework on top of the TypeScript language features making the handling of the framework abstractions extremely simple and intuitive. As a result, I built <em _ngcontent-vpm-c30="">Mulder</em> on top of <a href="https://scully.io/" _ngcontent-vpm-c30="">Scully</a>.</p>
+<h3 id="mulder-empowering-the-jamstack-with-dsls" _ngcontent-vpm-c30="">Mulder: Empowering the JAMStack with DSLs</h3>
+<p _ngcontent-vpm-c30="">The idea of <em _ngcontent-vpm-c30="">Mulder</em> is to provide a set of web components and scully plugins to consume data structured within DSLs that are parsed directly into TypeScript either at the time of passing through the CI for static data or at the time of loading the data at the time of loading the page for dynamic data. The scenario for the enduser is the following, any <em _ngcontent-vpm-c30="">txt</em> file hosted on github, gitlab, hackmd that can be updated on the fly by the user. This txt file is parsed on the fly by a combinatorial parser within the application in order to be consumed in the component it uses.</p>
+<p _ngcontent-vpm-c30="">Mulder therefore offers sample components for Markdown, a survey markup language, an online conference agenda and provides documentation on developing your own DSLs.</p>
+<p _ngcontent-vpm-c30="">As a result, github, gitlab or hackmd could become your <a href="https://jamstack.org/headless-cms/" _ngcontent-vpm-c30="">headless CMS</a>. They manage for you authentification, role-based management, Web IDE for txt file editions, txt file history, ... and Scully and Mulder can help you to design your front.</p>
+<h1 id="getting-started" _ngcontent-vpm-c30="">Getting started</h1>
+<p _ngcontent-vpm-c30="">If you want to try Mulder, it is important to understand the following concepts</p>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30="">Step 1: Understanding the notion of Web Components</p>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">Step 1.1: <a href="/s/webcomponent" _ngcontent-vpm-c30="">Web component and angular component</a></li>
+<li _ngcontent-vpm-c30="">Step 1.2: <a href="/s/componentabout" _ngcontent-vpm-c30="">Component and page layout in <em _ngcontent-vpm-c30="">Mulder</em></a></li>
+<li _ngcontent-vpm-c30="">Step 1.3: <a href="/s/componentabout" _ngcontent-vpm-c30="">A simple example of a Web component</a></li>
+<li _ngcontent-vpm-c30="">Step 1.4: <a href="/s/componentpublications" _ngcontent-vpm-c30="">A more complex example of a Web component</a></li>
+<li _ngcontent-vpm-c30="">Step 1.5: <a href="/s/componentrouting" _ngcontent-vpm-c30="">Angular and routing</a></li>
+</ul>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30="">Step 2: Scully and Jamstack: <a href="/s/scully" _ngcontent-vpm-c30="">Understanding Scully and the structure of a project using scully</a></p>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30="">Step 3: Dynamic vs static rendering</p>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">Step 3.1: <a href="/s/flexibility" _ngcontent-vpm-c30="">Dynamic rendering vs static rendering</a></li>
+<li _ngcontent-vpm-c30="">Step 3.2: <a href="/s/dynamicmd" _ngcontent-vpm-c30="">A component to consume markdown dynamically</a>)</li>
+</ul>
+</li>
+<li _ngcontent-vpm-c30=""><p _ngcontent-vpm-c30="">Step 4: DSLs as a markup language for editing web-app content</p>
+<ul _ngcontent-vpm-c30="">
+<li _ngcontent-vpm-c30="">Step 4.1: <a href="/s/whydsl" _ngcontent-vpm-c30="">Why DSLs as markup languages? why now?</a></li>
+<li _ngcontent-vpm-c30="">Step 4.2: <a href="/s/dslsurvey" _ngcontent-vpm-c30="">A markup language for surveyjs</a></li>
+<li _ngcontent-vpm-c30="">Step 4.3: <a href="/s/dslconfagenda" _ngcontent-vpm-c30="">A markup language for defining a conference agenda</a></li>
+<li _ngcontent-vpm-c30="">Step 4.4: <a href="/s/dsldesign" _ngcontent-vpm-c30="">Defining your own DSL</a></li>
+</ul>
+</li>
+</ul>
+<!--scullyContent-end--><scully-content _ngcontent-vpm-c30=""></scully-content><script>try {window['scullyContent'] = {cssId:"_ngcontent-vpm-c30",html:document.body.innerHTML.split('<!--scullyContent-begin-->')[1].split('<!--scullyContent-end-->')[0]};} catch(e) {console.error('scully could not parse content');}</script></div></div></div></article><mulder-footer _ngcontent-vpm-c20="" _nghost-vpm-c19=""><footer _ngcontent-vpm-c19=""><div _ngcontent-vpm-c19="" class="container"><div _ngcontent-vpm-c19="" class="row"><div _ngcontent-vpm-c19="" class="col-lg-8 col-md-10 mx-auto"><ul _ngcontent-vpm-c19="" class="list-inline text-center"><li _ngcontent-vpm-c19="" class="list-inline-item"><a _ngcontent-vpm-c19="" href="https://twitter.com/barais" target="_blank"><fa-stack _ngcontent-vpm-c19="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-vpm-c19="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"></path></svg></fa-icon><fa-icon _ngcontent-vpm-c19="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-vpm-c19="" class="list-inline-item"><a _ngcontent-vpm-c19="" href="http://scholar.google.fr/citations?user=LV5i8X4AAAAJ&amp;hl=en" target="_blank"><fa-stack _ngcontent-vpm-c19="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-vpm-c19="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"></path></svg></fa-icon><fa-icon _ngcontent-vpm-c19="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" class="svg-inline--fa fa-google fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-vpm-c19="" class="list-inline-item"><a _ngcontent-vpm-c19="" href="https://www.facebook.com/obarais" target="_blank"><fa-stack _ngcontent-vpm-c19="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-vpm-c19="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"></path></svg></fa-icon><fa-icon _ngcontent-vpm-c19="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-vpm-c19="" class="list-inline-item"><a _ngcontent-vpm-c19="" href="https://github.com/mulder-jamstack" target="_blank"><fa-stack _ngcontent-vpm-c19="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-vpm-c19="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"></path></svg></fa-icon><fa-icon _ngcontent-vpm-c19="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></fa-icon></fa-stack></a></li><li _ngcontent-vpm-c19="" class="list-inline-item"><a _ngcontent-vpm-c19="" href="http://www.linkedin.com/in/olivierbarais" target="_blank"><fa-stack _ngcontent-vpm-c19="" size="lg" class="fa-lg fa-stack"><fa-icon _ngcontent-vpm-c19="" stackitemsize="2x" class="ng-fa-icon fa-stack-2x"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle fa-stack-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z"></path></svg></fa-icon><fa-icon _ngcontent-vpm-c19="" stackitemsize="1x" class="ng-fa-icon fa-stack-1x fa-inverse"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-stack-1x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></fa-icon></fa-stack></a></li></ul><p _ngcontent-vpm-c19="" class="copyright text-muted">Copyright © <a _ngcontent-vpm-c19="" target="_blank" href="https://www.diverse-team.fr/">INRIA DiverSE Team 2021</a></p></div></div></div></footer></mulder-footer></mulder-layout><!----></mulder-static><!----></app-root>
+    <script id="ScullyIO-transfer-state"></script><script src="runtime.88282ac42d987410.js" type="module"></script><script src="polyfills.1927b5be29e0ba69.js" type="module"></script><script src="main.b35013ad5083acac.js" type="module"></script>
+
+</body></html>
