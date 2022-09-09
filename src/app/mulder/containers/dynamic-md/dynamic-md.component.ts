@@ -13,7 +13,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import { DynamicRoute } from "@app/navigation/models";
 import yaml from "js-yaml";
-import marked from "marked";
+import {marked} from "marked";
 import prism from "prismjs";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-css";

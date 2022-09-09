@@ -1,2 +1,11 @@
 identifier: k4n3e1s198me9fl1
 allowErrorCollect: true
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: mulder
+homeFolder: /home/barais/git/mulder.io
+distFolder: dist/mulder
+outDir: /home/barais/git/mulder.io/dist/static
+handle404: ''

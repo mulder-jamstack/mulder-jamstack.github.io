@@ -20,10 +20,15 @@ import {
     faRadiationAlt,
     faSearch,
     faSlidersH,
-    faStar,
     faTable,
     faTachometerAlt,
+    // tslint:disable-next-line:ordered-imports
     faUser,
+    faClock,
+    faChalkboardTeacher,
+    faCashRegister,
+    faShip,
+    faTrain,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const fontAwesomeSolidIcons = {
@@ -49,5 +54,9 @@ export const fontAwesomeSolidIcons = {
     faSlidersH,
     faHome,
     faRadiationAlt,
-    faStar,
+    faClock,
+    faChalkboardTeacher,
+    faCashRegister,
+    faShip,
+    faTrain,
 };

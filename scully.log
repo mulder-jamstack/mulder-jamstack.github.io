@@ -3791,3 +3791,33 @@ Using stored unhandled routes!.
    To discover new routes in the angular app use "npm run scully -- --scanRoutes"
 ----------------------------------[object Object]
 
+[object Object]
+Insert point with selector #toc not found. Skipping toc generation for route /blog/2018-07-18-MigratingFromHibernateToEclipseLinkOnJHipster.Insert point with selector #toc not found. Skipping toc generation for route /blog/2018-05-29-AddingWifiToCamera.
+
+Insert point with selector #toc not found. Skipping toc generation for route /blog/hello-from-diverse-coffee.
+Notice:
+    ---------------------------------------------------------------------------------------
+      Language 'md' is not available in the default Prism.js setup.
+      if you want support for this you can add it into your ScullyConfig.ts as:
+
+        import  'prismjs/components/prism-md'
+
+      Note that this is a sample the actual syntax might be slightly different
+    ---------------------------------------------------------------------------------------
+          Notice:
+    ---------------------------------------------------------------------------------------
+      Language 'grammar' is not available in the default Prism.js setup.
+      if you want support for this you can add it into your ScullyConfig.ts as:
+
+        import  'prismjs/components/prism-grammar'
+
+      Note that this is a sample the actual syntax might be slightly different
+    ---------------------------------------------------------------------------------------
+          Insert point with selector #toc not found. Skipping toc generation for route /s/dslsurvey.Insert point with selector #toc not found. Skipping toc generation for route /s/componentabout.Insert point with selector #toc not found. Skipping toc generation for route /s/dsldesign.Insert point with selector #toc not found. Skipping toc generation for route /s/dslconfagenda.
+
+
+
+
+
+Insert point with selector #toc not found. Skipping toc generation for route /s/flexibility.Insert point with selector #toc not found. Skipping toc generation for route /s/whydsl.
+

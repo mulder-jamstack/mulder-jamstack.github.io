@@ -1,157 +1,140 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "mulder": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "mulder",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "allowedCommonJsDependencies": [
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+      "mulder": {
+        "projectType": "application",
+        "schematics": {
+          "@schematics/angular:component": {
+            "style": "scss"
+          }
+        },
+        "root": "",
+        "sourceRoot": "src",
+        "prefix": "sb",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "allowedCommonJsDependencies": [
                 "lodash",
                 "d3-cloud",
-                "surveyjs-widgets",
-                "survey-pdf",
+                "prismjs",
                 "raf",
-                "@babel/runtime-corejs3"
-
+                "rgbcolor",
+                "survey-angular",
+                "survey-core",
+                "survey-pdf",
+                "survey-widgets",
+                "core-js/modules/es.array.index-of.js",
+                "core-js/modules/es.array.iterator.js",
+                "core-js/modules/es.array.reduce.js",
+                "core-js/modules/es.array.reverse.js",
+                "core-js/modules/es.promise.js",
+                "core-js/modules/es.regexp.to-string.js",
+                "core-js/modules/es.string.ends-with.js",
+                "core-js/modules/es.string.includes.js",
+                "core-js/modules/es.string.match.js",
+                "core-js/modules/es.string.replace.js",
+                "core-js/modules/es.string.split.js",
+                "core-js/modules/es.string.starts-with.js",
+                "core-js/modules/es.string.trim.js",
+                "core-js/modules/web.dom-collections.iterator.js",
+                "surveyjs-widgets"
              ],
-            "outputPath": "dist/mulder",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "aot": false,
-            "assets": [
-              "src/assets/img/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles/styles.scss"
-            ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src",
-                "./node_modules"
-              ]
-            },
-            "scripts": [
-            ]
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
+              "outputPath": "dist/mulder",
+              "index": "src/index.html",
+              "main": "src/main.ts",
+              "polyfills": "src/polyfills.ts",
+              "tsConfig": "tsconfig.app.json",
+              "assets": [
+                "src/favicon.ico",
+                "src/CNAME",
+                "src/assets"
+
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "mulder:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "mulder:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "mulder:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/assets/img/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles/styles.scss"
-            ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src",
-                "./node_modules"
-              ]
+              "styles": [
+                "src/styles/styles.scss"
+              ],
+              "scripts": []
             },
-            "scripts": [],
-            "codeCoverageExclude": [
-              "src/testing/**/*"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mulder:serve"
+            "configurations": {
+              "production": {
+                "optimization": {
+                  "scripts": true,
+                  "styles": {
+                    "minify": true,
+                    "inlineCritical": false
+                  }
+                },
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "900kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.prod.ts"
+                  }
+                ],
+                "outputHashing": "all"
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production"
           },
-          "configurations": {
-            "production": {
-              "devServerTarget": "mulder:serve:production"
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+              "production": {
+                "browserTarget": "mulder:build:production"
+              },
+              "development": {
+                "browserTarget": "mulder:build:development"
+              }
+            },
+            "defaultConfiguration": "development"
+          },
+          "extract-i18n": {
+            "builder": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "browserTarget": "mulder:build"
+            }
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "main": "src/test.ts",
+              "polyfills": "src/polyfills.ts",
+              "tsConfig": "tsconfig.spec.json",
+              "karmaConfig": "karma.conf.js",
+              "assets": [
+                "src/favicon.ico",
+                "src/assets"
+              ],
+              "styles": [
+                "src/styles/styles.scss"
+              ],
+              "scripts": []
             }
           }
         }
       }
     }
-  },
-  "defaultProject": "mulder",
-  "cli": {
-    "analytics": "1b38752a-78cd-445f-b84a-c73a1648eb69"
   }
-}

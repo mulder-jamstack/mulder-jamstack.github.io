@@ -9,7 +9,7 @@ import {
     Output,
     SimpleChanges,
 } from "@angular/core";
-import marked from "marked";
+import {marked} from "marked";
 import prism from "prismjs";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-css";
@@ -122,7 +122,7 @@ export class SurveyComponent implements OnInit, OnChanges {
 
     initFromJSON() {
         const surveyModel = new Survey.Model();
-        surveyModel.onTextMarkdown.add((survey, options) => {
+        surveyModel.onTextMarkdown.add((survey:any, options:any) => {
             // convert the mardown text to html
             // console.log(options);
 
@@ -144,7 +144,7 @@ export class SurveyComponent implements OnInit, OnChanges {
             options.html = str;
         });
 
-        surveyModel.onAfterRenderQuestion.add((survey, options) => {
+        surveyModel.onAfterRenderQuestion.add((survey:any, options:any) => {
             if (!options.question.popupdescription) {
                 return;
             }
@@ -162,11 +162,11 @@ export class SurveyComponent implements OnInit, OnChanges {
             header.appendChild(span);
             header.appendChild(btn);
         });
-        surveyModel.onComplete.add((result, options) => {
+        surveyModel.onComplete.add((result:any, options:any) => {
             this.submitFinalSurvey.emit(result.data);
             this.result = result.data;
         });
-        surveyModel.onCurrentPageChanged.add((result, options) => {
+        surveyModel.onCurrentPageChanged.add((result:any, options:any) => {
             this.submitSurvey.emit(result.data);
             this.result = result.data;
         });

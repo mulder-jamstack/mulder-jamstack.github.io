@@ -425,8 +425,8 @@ export class ProgramComponent implements OnInit, OnChanges {
         const inlinedDataUrl =
             "data:text/calendar;charset=utf-8," + encodeURIComponent(file);
         const filename = "icpe2021.ics";
-        if (window.navigator.msSaveOrOpenBlob !== undefined) {
-            window.navigator.msSaveBlob(blob, filename);
+        if ((window.navigator as any).msSaveOrOpenBlob !== undefined) {
+            (window.navigator as any).msSaveBlob(blob, filename);
         } else {
             const elem = window.document.createElement("a");
 

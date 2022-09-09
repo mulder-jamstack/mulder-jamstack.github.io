@@ -58,8 +58,8 @@ function init(Survey: any) {
                 photo = document.getElementById("photo");
                 startbutton = document.getElementById("startbutton");
                 sendbutton = document.getElementById("sendbutton");
-                navigator.getUserMedia =
-                    navigator.getUserMedia ||
+                (navigator as any).getUserMedia =
+                (navigator as any).getUserMedia ||
                     (navigator as any).webkitGetUserMedia ||
                     (navigator as any).mozGetUserMedia ||
                     (navigator as any).msGetUserMedia;
@@ -68,17 +68,17 @@ function init(Survey: any) {
                     typeof navigator.mediaDevices === "undefined" ||
                     typeof navigator.mediaDevices.getUserMedia === "undefined"
                 ) {
-                    navigator.getUserMedia(
+                    (navigator as any).getUserMedia(
                         {
                             video: true,
                             audio: false,
                         },
-                        function (stream) {
+                        function (stream:any) {
                             video.srcObject = stream;
                             video.play();
                             question.video = video;
                         },
-                        function (err) {
+                        function (err:any) {
                             console.log("An error occured! " + err);
                         }
                     );

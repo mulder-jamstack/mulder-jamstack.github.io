@@ -5,12 +5,12 @@ import { BlogComponent } from "./blog/blog.component";
 import { BlogsComponent } from "./blogs/blogs.component";
 import { DynamicMdComponent } from "./dynamic-md/dynamic-md.component";
 import { HomeComponent } from "./home/home.component";
+import { ProgramDemoComponent } from "./programdemo/programdemo.component";
 import { AuthorPipe } from "./publications/author.pipe";
 import { DescbibPipe } from "./publications/descbib.pipe";
 import { PublicationsComponent } from "./publications/publications.component";
 import { StaticComponent } from "./static/static.component";
 import { SurveyDemoComponent } from "./surveydemo/surveydemo.component";
-import { ProgramDemoComponent } from "./programdemo/programdemo.component";
 
 export const containers = [
     HomeComponent,

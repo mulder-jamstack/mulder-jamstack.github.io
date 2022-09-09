@@ -1,3 +1,5 @@
+
+
 import {
     HandledRoute,
     logWarn,
@@ -6,11 +8,17 @@ import {
     ScullyConfig,
     setPluginConfig,
 } from "@scullyio/scully";
-import "prismjs/components/prism-java.js";
-import "prismjs/components/prism-visual-basic.js";
-import "prismjs/components/prism-yaml.js";
+import '@scullyio/scully-plugin-puppeteer';
+import '@k9n/scully-plugin-toc';
 
-import { getTocPlugin, TocConfig } from "./scully/plugins/toc";
+import 'prismjs/components/prism-java.js';
+import 'prismjs/components/prism-visual-basic.js';
+import 'prismjs/components/prism-yaml.js';
+import 'prismjs/components/prism-bash.js';
+import {
+    TocConfig,
+    TocPluginName,
+  } from  '@k9n/scully-plugin-toc';
 
 const _posts = require("./src/dynamicRoutes.json");
 
@@ -47,8 +55,7 @@ const tocOptions: TocConfig = {
     scrollIntoViewOnClick: true, // add event to each link that scrolls into view on click:
     // onclick="document.getElementById('target-id').scrollIntoView()"
 };
-const TocPlugin = getTocPlugin();
-setPluginConfig(TocPlugin, tocOptions);
+setPluginConfig(TocPluginName, tocOptions);
 
 export const config: ScullyConfig = {
     projectRoot: "./src",
